@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Diamond-Cleaning.props" />
+</Project>
