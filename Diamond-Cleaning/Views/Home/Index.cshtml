@@ -1,6 +1,15 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<Service>
+
+@{
+    ViewData["Title"] = "Diamond клининг г. Владимир";
 }
+
+@foreach(var service in @Model)
+{
+    @service;
+}
+
+<h2> @ViewData["CurrentDate"]</h2>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>

@@ -28,3 +28,34 @@ C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\Diamond-Cleani
 C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\Diamond-Cleaning.pdb
 C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\Diamond-Cleaning.genruntimeconfig.cache
 C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\ref\Diamond-Cleaning.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\Diamond-Cleaning.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\Diamond-Cleaning.AssemblyInfoInputs.cache
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\Diamond-Cleaning.AssemblyInfo.cs
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\Diamond-Cleaning.csproj.CoreCompileInputs.cache
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\Diamond-Cleaning.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\Diamond-Cleaning.RazorAssemblyInfo.cache
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\Diamond-Cleaning.RazorAssemblyInfo.cs
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\Diamond-Cleaning.sourcelink.json
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\Diamond-Cleaning.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\refint\Diamond-Cleaning.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\Diamond-Cleaning.pdb
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\appsettings.json
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Diamond-Cleaning.staticwebassets.runtime.json
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Diamond-Cleaning.exe
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Diamond-Cleaning.deps.json
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Diamond-Cleaning.runtimeconfig.json
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Diamond-Cleaning.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Diamond-Cleaning.pdb
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\staticwebassets\msbuild.Diamond-Cleaning.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\staticwebassets\msbuild.build.Diamond-Cleaning.props
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Diamond-Cleaning.props
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Diamond-Cleaning.props
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\scopedcss\bundle\Diamond-Cleaning.styles.css
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\scopedcss\projectbundle\Diamond-Cleaning.bundle.scp.css
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\Diamond-Cleaning.genruntimeconfig.cache
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\obj\Debug\net8.0\ref\Diamond-Cleaning.dll

@@ -26,10 +26,16 @@ namespace Diamond_Cleaning
 
             app.UseAuthorization();
 
+
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}/{name?}");
+                pattern: "{controller=Home}/{action=Index}"
+                );
 
+            app.MapControllerRoute(
+name: "1",
+pattern: "{controller=Service}/{action=Index}/{id?}"
+);
             app.Run();
         }
     }
