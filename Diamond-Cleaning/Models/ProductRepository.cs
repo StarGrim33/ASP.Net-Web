@@ -9,9 +9,12 @@
             _services =
             [
                 new(name: "Стандартная уборка квартиры",
-                description: "Стандартная уборка вашей квартиры, цена зависит от количества комнат и площади", cost: "От 5000 тыс. рублей"),
-                new(name: "Генеральная уборка квартиры", description: "Генеральная уборка вашеей квартиры", cost: "От 8000 тыс. рублей"),
-                new(name: "Уборка поддерживающая", description: "Поддерживающая уборка квартиры", cost: "От 3000 тыс. рублей")
+                description: "Стандартная уборка вашей квартиры, цена зависит от количества комнат и площади", cost: 5000,
+                link: "https://super-cleaning-spb.ru/uploads/s/g/f/l/gflxywmvkvrh/img/full_H7gMciJT.jpg"),
+                new(name: "Генеральная уборка квартиры", description: "Генеральная уборка вашей квартиры", cost: 8000,
+                link: "https://krym-cleaning.ru/wp-content/uploads/2023/01/Kachestvennaya-uborka-dvuhkomnatnoj-kvartiry.jpg"),
+                new(name: "Уборка поддерживающая", description: "Поддерживающая уборка квартиры", cost: 3000,
+                link: "https://proprikol.ru/wp-content/uploads/2021/09/kartinki-uborka-kvartir-40.jpeg")
             ];
         }
 

@@ -4,14 +4,62 @@
     ViewData["Title"] = "Diamond клининг г. Владимир";
 }
 
+<h2 class="headerText">
+    Виды наших услуг
+</h2>
+
+<div class="row">
 @foreach(var service in @Model)
 {
-    @service;
+    <div class="col-4 card shadow">
+           <img src="@service.Link" alt="Изображение услуги" />
+            <div class="card-body">
+        <a style="color:black" href="/service/index/@service.Id">
+            <h5>@service.Name</h5>
+        </a>
+        <h5>@service.Cost</h5>
+        <a class="btn btn-dark" href="#" role="button">Заказать</a>
+        </div>
+    </div>
 }
+</div>
 
-<h2> @ViewData["CurrentDate"]</h2>
+<div class="timeStyle">
+    Контактная информация
+</div>
+
+<li class="timeStyle">
+    <a href="mailto:elenakuzmicheva77@gmail.com">
+        <span>
+            elenakuzmicheva77@gmail.com
+        </span>
+    </a>
+</li>
+
+<li class="timeStyle">
+    <a>
+        +7 (919) 025-54-43
+    </a>
+</li>
+
+<li class="footer-info__contact">
+    <span class="headerText">Режим работы</span>
+</li>
+
+<li class="footer-info__contact">
+    <div class="ui-contact align-items-stretch">
+        <span class="timeStyle"></span>
+        <div class="timeStyle">
+            с 10:00 до 22:00 без выходных
+        </div>
+    </div>
+</li>
+
+<p>
+    <h2 class="timeStyle">@ViewData["CurrentDate"]</h2>
+</p>
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="headerText">Добро пожаловать</h1>
+    <p class ="textStyle">Наша группа Вконтакте <a href="https://vk.com/diamondclean1ng">Чистота - залог успеха!</a>.</p>
 </div>

@@ -1,7 +1,6 @@
-using Diamond_Cleaning.Models;
+﻿using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using System.Linq;
 
 namespace Diamond_Cleaning.Controllers
 {
@@ -18,7 +17,7 @@ namespace Diamond_Cleaning.Controllers
 
         public IActionResult Index()
         {
-            ViewData["CurrentDate"] = DateOnly.FromDateTime(DateTime.Now);
+            ViewData["CurrentDate"] = $"Сегодня: {DateOnly.FromDateTime(DateTime.Now)}";
             ViewData["LastWeekStartDate"] = DateOnly.FromDateTime(DateTime.Now.AddDays(-7));
             var services = _productRepository.GetServices();
             return View(services);

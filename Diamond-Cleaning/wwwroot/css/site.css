@@ -8,8 +8,33 @@ html {
   }
 }
 
+.timeStyle {
+    color: darkcyan;
+    font-size: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headerText{
+    color: deepskyblue;
+    font-size: 25px;
+}
+
+.textStyle{
+    color: burlywood;
+    font-size: 18px;
+}
+
+.footer-info__contact {
+    color: chocolate;
+    font-size: 16px;
+    align-items: center;
+    display: flex;
+}
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
