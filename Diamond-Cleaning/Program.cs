@@ -1,3 +1,6 @@
+using Diamond_Cleaning.Interfaces;
+using Diamond_Cleaning.Models;
+
 namespace Diamond_Cleaning
 {
     public class Program
@@ -7,6 +10,8 @@ namespace Diamond_Cleaning
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddSingleton<IServicesRepository, InMemoryServicesRepository>();
+            builder.Services.AddSingleton<ICartsRepository, InMemoryCartsRepository>();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
@@ -33,9 +38,9 @@ namespace Diamond_Cleaning
                 );
 
             app.MapControllerRoute(
-name: "1",
-pattern: "{controller=Service}/{action=Index}/{id?}"
-);
+                name: "1",
+                pattern: "{controller=Service}/{action=Index}/{id?}"
+                );
             app.Run();
         }
     }

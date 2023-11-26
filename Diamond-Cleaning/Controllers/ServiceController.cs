@@ -1,15 +1,16 @@
-﻿using Diamond_Cleaning.Models;
+﻿using Diamond_Cleaning.Interfaces;
+using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Diamond_Cleaning.Controllers
 {
     public class ServiceController : Controller
     {
-        private ServicesRepository _services;
+        private IServicesRepository _services;
 
-        public ServiceController()
+        public ServiceController(IServicesRepository services)
         {
-            _services = new ServicesRepository();
+            _services = services;
         }
 
         public IActionResult? Index(int id)

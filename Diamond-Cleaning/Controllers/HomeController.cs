@@ -1,4 +1,5 @@
-﻿using Diamond_Cleaning.Models;
+﻿using Diamond_Cleaning.Interfaces;
+using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,19 +8,19 @@ namespace Diamond_Cleaning.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ServicesRepository _productRepository;
+        private readonly IServicesRepository _servicesRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IServicesRepository servicesRepository)
         {
-            _productRepository = new();
             _logger = logger;
+            _servicesRepository = servicesRepository;
         }
 
         public IActionResult Index()
         {
             ViewData["CurrentDate"] = $"Сегодня: {DateOnly.FromDateTime(DateTime.Now)}";
             ViewData["LastWeekStartDate"] = DateOnly.FromDateTime(DateTime.Now.AddDays(-7));
-            var services = _productRepository.GetServices();
+            var services = _servicesRepository.GetServices();
             return View(services);
         }
 

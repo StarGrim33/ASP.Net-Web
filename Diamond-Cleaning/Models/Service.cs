@@ -6,12 +6,12 @@
 
         public Service(string? name, string? description, decimal cost, string? link)
         {
-            Id = _instanceId;
             Name = name;
             Description = description;
             Cost = cost;
-            _instanceId += 1;
             Link = link;
+            Id = _instanceId;
+            _instanceId += 1;
         }
 
         public int Id { get; }

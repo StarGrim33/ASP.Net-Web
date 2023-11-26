@@ -1,15 +1,18 @@
-﻿using Diamond_Cleaning.Models;
+﻿using Diamond_Cleaning.Interfaces;
+using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Diamond_Cleaning.Controllers
 {
     public class CartController : Controller
     {
-        private readonly ServicesRepository _productRepository;
+        private readonly IServicesRepository _productRepository;
+        private readonly ICartsRepository _cartRepository;
 
-        public CartController()
+        public CartController(IServicesRepository productRepository, ICartsRepository cartRepository)
         {
-            _productRepository = new();
+            _productRepository = productRepository;
+            _cartRepository = cartRepository;
         }
 
         public IActionResult Add(int productId)
@@ -17,20 +20,18 @@ namespace Diamond_Cleaning.Controllers
             try
             {
                 var item = _productRepository.TryGetService(productId);
-                CartsRepository.Add(item, Constants.UserId);
+                _cartRepository.Add(item, Constants.UserId);
                 return RedirectToAction("Index");
             }
             catch (Exception)
             {
-
                 throw;
             }
-
         }
 
         public IActionResult Index()
         {
-            var cart = CartsRepository.TryGetByUserId(Constants.UserId);
+            var cart = _cartRepository.TryGetByUserId(Constants.UserId);
             return View(cart);
         }
     }
