@@ -4,15 +4,23 @@ namespace Diamond_Cleaning.Models
 {
     public class Cart
     {
-        private List<Service> _services;
-
-        public decimal TotalPrice { get; set; }
-
-        public Guid Id {get; set;} // UserGuid
+        public List<CartItem> Items;
 
         public Cart()
         {
-            _services = new();
+            Items = [];
+        }
+
+        public Guid Id {get; set;} // UserGuid
+
+        public string UserId { get; set;}
+
+        public decimal Cost
+        {
+            get
+            {
+                return Items.Sum(x => x.Cost);
+            }
         }
 
         public void AddItem(Service service)

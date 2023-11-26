@@ -5,11 +5,11 @@ namespace Diamond_Cleaning.Controllers
 {
     public class ServiceController : Controller
     {
-        private ProductRepository _services;
+        private ServicesRepository _services;
 
         public ServiceController()
         {
-            _services = new ProductRepository();
+            _services = new ServicesRepository();
         }
 
         public IActionResult? Index(int id)
