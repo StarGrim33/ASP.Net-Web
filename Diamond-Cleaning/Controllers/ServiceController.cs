@@ -12,11 +12,11 @@ namespace Diamond_Cleaning.Controllers
             _services = new ProductRepository();
         }
 
-        public string? Index(int id)
+        public IActionResult? Index(int id)
         {
-            var service = _services.TryGetService(id);
+            Service? service = _services.TryGetService(id);
 
-            return service == null ? $"Услуги с таким id нет" : service?.ToString();
+            return View(service);
         }
     }
 }

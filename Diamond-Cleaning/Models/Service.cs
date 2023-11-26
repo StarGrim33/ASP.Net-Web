@@ -4,13 +4,14 @@
     {
         private static int _instanceId = 0;
 
-        public Service(string? name, string? description, string? cost)
+        public Service(string? name, string? description, decimal cost, string? link)
         {
             Id = _instanceId;
             Name = name;
             Description = description;
             Cost = cost;
             _instanceId += 1;
+            Link = link;
         }
 
         public int Id { get; }
@@ -19,7 +20,9 @@
 
         public string Description { get; }
 
-        public string? Cost { get; }
+        public decimal Cost { get; }
+
+        public string? Link { get; }
 
         public override string ToString()
         {
