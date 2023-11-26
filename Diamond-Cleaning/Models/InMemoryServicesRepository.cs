@@ -1,19 +1,21 @@
-﻿namespace Diamond_Cleaning.Models
-{
-    public class ServicesRepository
-    {
-        private static List<Service>? _services;
+﻿using Diamond_Cleaning.Interfaces;
 
-        static ServicesRepository()
+namespace Diamond_Cleaning.Models
+{
+    public class InMemoryServicesRepository : IServicesRepository
+    {
+        private List<Service>? _services;
+
+        public InMemoryServicesRepository()
         {
             _services =
             [
-                new(name: "Стандартная уборка квартиры",
+                new Service(name: "Стандартная уборка квартиры",
                 description: "Стандартная уборка вашей квартиры, цена зависит от количества комнат и площади", cost: 5000,
                 link: "/image/image1.jpg"),
-                new(name: "Генеральная уборка квартиры", description: "Генеральная уборка вашей квартиры", cost: 8000,
+                new Service(name: "Генеральная уборка квартиры", description: "Генеральная уборка вашей квартиры", cost: 8000,
                 link: "/image/image2.jpg"),
-                new(name: "Уборка поддерживающая", description: "Поддерживающая уборка квартиры", cost: 3000,
+                new Service(name: "Уборка поддерживающая", description: "Поддерживающая уборка квартиры", cost: 3000,
                 link: "/image/image3.jpeg")
             ];
         }

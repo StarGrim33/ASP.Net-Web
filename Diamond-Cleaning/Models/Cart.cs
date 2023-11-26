@@ -22,17 +22,5 @@ namespace Diamond_Cleaning.Models
                 return Items.Sum(x => x.Cost);
             }
         }
-
-        public void AddItem(Service service)
-        {
-            try
-            {
-                
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }
