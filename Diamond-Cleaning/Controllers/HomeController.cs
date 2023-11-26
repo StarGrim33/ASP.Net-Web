@@ -7,7 +7,7 @@ namespace Diamond_Cleaning.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ProductRepository _productRepository;
+        private readonly ServicesRepository _productRepository;
 
         public HomeController(ILogger<HomeController> logger)
         {
