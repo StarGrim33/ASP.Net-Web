@@ -9,15 +9,19 @@ namespace Diamond_Cleaning.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IServicesRepository _servicesRepository;
+        private readonly ICartsRepository _cartsRepository;
 
-        public HomeController(ILogger<HomeController> logger, IServicesRepository servicesRepository)
+        public HomeController(ILogger<HomeController> logger, IServicesRepository servicesRepository, ICartsRepository cartsRepository)
         {
             _logger = logger;
             _servicesRepository = servicesRepository;
+            _cartsRepository = cartsRepository;
         }
 
         public IActionResult Index()
         {
+            var cart = _cartsRepository.TryGetByUserId(Constants.UserId);
+            ViewBag.ProductCount = cart?.Amount;
             ViewData["CurrentDate"] = $"Сегодня: {DateOnly.FromDateTime(DateTime.Now)}";
             ViewData["LastWeekStartDate"] = DateOnly.FromDateTime(DateTime.Now.AddDays(-7));
             var services = _servicesRepository.GetServices();

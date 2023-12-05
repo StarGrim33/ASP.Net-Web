@@ -29,6 +29,26 @@ namespace Diamond_Cleaning.Controllers
             }
         }
 
+        public IActionResult Delete(int productId)
+        {
+            try
+            {
+                var item = _productRepository.TryGetService(productId);
+                _cartRepository.Delete(item, Constants.UserId);
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public IActionResult Clear()
+        {
+            _cartRepository.Clear(Constants.UserId);
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Index()
         {
             var cart = _cartRepository.TryGetByUserId(Constants.UserId);
