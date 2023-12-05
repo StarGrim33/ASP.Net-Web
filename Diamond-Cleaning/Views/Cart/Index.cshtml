@@ -29,7 +29,11 @@ else
                         <tr>
                             <td>@item.Service.Name</td>
                             <td>@item.Service.Cost</td>
-                            <td>@item.Amount</td>
+                            <td>
+                                @item.Amount
+                                <a class="btn btn-outline-primary btn-sm" href="/cart/add?productId=@item.Service.Id">+</a>
+                                <a class="btn btn-outline-primary btn-sm" href="/cart/delete?productId=@item.Service.Id">-</a>
+                            </td>
                             <td>@item.Cost</td>
                         </tr>
                     }
@@ -40,12 +44,10 @@ else
                 <h3>@Model.Cost</h3>
             </div>
             <div class="text-center">
+                <a class="btn btn-outline-success btn-lg" href="/order/index" role="button">Перейти к оформлению</a>
                 <a class="btn btn-primary" href="/home/index" role="button">Продолжить покупки</a>
-                <a class="btn btn-success" href="#" role="button">Оформить заказ</a>
+                <a class="btn btn-warning" href="/cart/clear" role="button">Очистить корзину</a>
             </div>
         </div>
     </div>
 }
-
-<h1>Корзина с говном</h1>
-

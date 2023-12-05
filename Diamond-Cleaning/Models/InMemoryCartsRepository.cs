@@ -62,5 +62,30 @@ namespace Diamond_Cleaning.Models
                 }
             }
         }
+
+        public void Delete(Service service, string userId) 
+        {
+            var existingCart = TryGetByUserId(userId);
+            var existingCartItem = existingCart.Items.FirstOrDefault(item => item.Service.Id == service.Id);
+            
+            if(existingCartItem != null)
+            {
+                existingCartItem.Amount--;
+
+                if (existingCart.Items.Count == 0)
+                    _carts.Remove(existingCart);
+
+                if (existingCartItem.Amount == 0)
+                    existingCart.Items.Remove(existingCartItem); 
+            }
+        }
+
+        public void Clear(string userId)
+        {
+            ArgumentNullException.ThrowIfNull(userId);
+
+            var existingCart = TryGetByUserId(userId);
+            _carts.Remove(existingCart);
+        }
     }
 }

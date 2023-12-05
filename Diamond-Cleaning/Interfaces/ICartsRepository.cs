@@ -6,6 +6,10 @@ namespace Diamond_Cleaning.Interfaces
     {
         void Add(Service service, string userId);
 
-        public Cart TryGetByUserId(string userId);
+        Cart TryGetByUserId(string userId);
+
+        void Delete(Service service, string productId);
+
+        void Clear(string userId);
     }
 }

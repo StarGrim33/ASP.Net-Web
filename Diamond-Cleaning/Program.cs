@@ -12,6 +12,7 @@ namespace Diamond_Cleaning
             // Add services to the container.
             builder.Services.AddSingleton<IServicesRepository, InMemoryServicesRepository>();
             builder.Services.AddSingleton<ICartsRepository, InMemoryCartsRepository>();
+            builder.Services.AddSingleton<IOrdersRepository, OrdersInMemoryRepository>();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();

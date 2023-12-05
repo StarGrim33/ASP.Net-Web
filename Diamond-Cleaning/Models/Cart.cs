@@ -19,8 +19,10 @@ namespace Diamond_Cleaning.Models
         {
             get
             {
-                return Items.Sum(x => x.Cost);
+                return Items?.Sum(x => x.Cost) ?? 0;
             }
         }
+
+        public int Amount => Items?.Sum(x => x.Amount) ?? 0;
     }
 }
