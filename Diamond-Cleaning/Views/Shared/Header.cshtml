@@ -20,8 +20,19 @@
                     <li>
                         <a class="nav-link text-dark" asp-area="" asp-controller="Authorization" asp-action="Index"> <i class="bi bi-person"></i> Войти </a>
                     </li>
+                    <li>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="administrator" asp-action="index"> <i class="bi bi-database"></i> Администратор </a>
+                    </li>
                 </ul>
             </div>
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                    <form class="d-flex" role="search" method="post">
+                        <input name="name" class="form-control" type="search" placeholder="Поиск" aria-label="Поиск">
+                        <button class="btn btn-dark" type="submit" asp-controller="home" asp-action="search"> <i class="bi bi-search"></i> </button>
+                    </form>
+                </div>
+            </nav>
         </div>
     </nav>
 </header>

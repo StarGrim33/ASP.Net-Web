@@ -26,8 +26,36 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/GetOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxHZXRPcmRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/GetProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxHZXRQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/GetRoles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxHZXRSb2xlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/GetUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxHZXRVc2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/MenuAdministrator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxNZW51QWRtaW5pc3RyYXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Authorization/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Authorization/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Cart/Index.cshtml]
@@ -40,6 +68,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Home/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Order/Index.cshtml]
