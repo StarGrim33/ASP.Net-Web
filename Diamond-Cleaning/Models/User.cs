@@ -18,6 +18,8 @@
 
         public string CheckBox { get; set; }
 
+        public string RepeatPassword { get; set; }
+
         public bool DoRememberMe => CheckBox == "on";
     }
 }

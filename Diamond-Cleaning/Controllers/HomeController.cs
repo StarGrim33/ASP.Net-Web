@@ -33,6 +33,19 @@ namespace Diamond_Cleaning.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Search(string name)
+        {
+            if (name != null)
+            {
+                var products = _servicesRepository.GetServices();
+                var findProducts = products.Where(product => product.Name.ToLower().Contains(name.ToLower())).ToList();
+                return View(findProducts);
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
