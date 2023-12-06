@@ -18,16 +18,35 @@ namespace Diamond_Cleaning.Controllers
         public IActionResult Index()
         {
             var cart = _cartsRepository.TryGetByUserId(Constants.UserId);
-            return View(cart);
+            return View();
         }
 
         [HttpPost]
-        public IActionResult Make(Order order)
+        public IActionResult Buy(UserOrderInfo user)
         {
+            if (!user.Name.All(c => char.IsLetter(c) || c == ' '))
+            {
+                ModelState.AddModelError("", "ФИО должны содержать только буквы");
+            }
+            if (!user.Phone.All(c => char.IsDigit(c) || "+()- ".Contains(c)))
+            {
+                ModelState.AddModelError("", "Номер телефона может содержать только цифры и символы '+()-'");
+            }
+            if (!ModelState.IsValid)
+            {
+                return View("Index");
+            }
+
             var existingCart = _cartsRepository.TryGetByUserId(Constants.UserId);
-            _ordersRepository.Add(existingCart, order);
+            var order = new Order
+            {
+                User = user,
+                Items = existingCart.Items
+            };
+
+            _ordersRepository.Add(order);
             _cartsRepository.Clear(Constants.UserId);
-            return View("~/Views/Order/Success.cshtml", order);
+            return View("Success", order);
         }
     }
 }

@@ -43,5 +43,11 @@ namespace Diamond_Cleaning.Models
                 throw;
             }
         }
+
+        public void Delete(int id)
+        {
+            var product = TryGetService(id);
+            _services?.Remove(product);
+        }
     }
 }

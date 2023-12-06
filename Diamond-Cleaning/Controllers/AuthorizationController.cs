@@ -5,7 +5,6 @@ namespace Diamond_Cleaning.Controllers
 {
     public class AuthorizationController : Controller
     {
-
         public IActionResult Index()
         {
             return View();
@@ -14,7 +13,13 @@ namespace Diamond_Cleaning.Controllers
         [HttpPost]
         public IActionResult Authorize(User user)
         {
-            return Redirect("~/Home/Index");
+            if (user.Name == user.Password)
+                ModelState.AddModelError("", "Имя и пароль не должны совпадать");
+
+            if (ModelState.IsValid)
+                return RedirectToAction("Index", "Home");
+
+            return View("Index");
         }
 
         public IActionResult Register()
@@ -25,7 +30,13 @@ namespace Diamond_Cleaning.Controllers
         [HttpPost]
         public IActionResult AddNewUser(User user)
         {
-            return Redirect("~/Home/Index");
+            if (user.Name == user.Password)
+                ModelState.AddModelError("", "Имя и пароль не должны совпадать");
+
+            if (ModelState.IsValid)
+                return RedirectToAction("Index", "Home");
+
+            return View("Register");
         }
     }
 }
