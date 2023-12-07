@@ -39,21 +39,26 @@ namespace Diamond_Cleaning.Controllers
             currentProduct.Name = serviceEdit.Name;
             currentProduct.Cost = serviceEdit.Cost;
             currentProduct.Description = serviceEdit.Description;
-            currentProduct.Link = serviceEdit.ImageLink;
+            currentProduct.Link = serviceEdit.Link;
             return RedirectToAction("GetProducts", "Administrator");
         }
 
         public IActionResult Add()
         {
-            ServiceEdit serviceEdit = new();
-            return View(serviceEdit);
+            if(ModelState.IsValid)
+            {
+                ServiceEdit serviceEdit = new();
+                return View(serviceEdit);
+            }
+
+            return View("Add");
         }
 
         [HttpPost]
         public IActionResult Add(ServiceEdit newProduct)
         {
             var products = _services.GetServices();
-            products.Add(new Service(newProduct.Name, newProduct.Description, newProduct.Cost, newProduct.ImageLink));
+            products.Add(new Service(newProduct.Name, newProduct.Description, newProduct.Cost, newProduct.Link));
             return RedirectToAction("GetProducts", "Administrator");
         }
     }

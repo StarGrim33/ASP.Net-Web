@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Aciy74zP50UdXnRQbNaZVIX3X81xB2zRzxMOYOYnOfs=",
+  "Hash": "dfnvUwiWOL57qqJN+ZpseJqhlR+8j5XYYMSBrEwYinA=",
   "Source": "Diamond-Cleaning",
   "BasePath": "_content/Diamond-Cleaning",
   "Mode": "Default",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\image3.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\Diamond-Cleaning\\wwwroot\\image\\jWU3vawFPuQ.jpg",
+      "SourceId": "Diamond-Cleaning",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\Diamond-Cleaning\\wwwroot\\",
+      "BasePath": "_content/Diamond-Cleaning",
+      "RelativePath": "image/jWU3vawFPuQ.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\jWU3vawFPuQ.jpg"
     },
     {
       "Identity": "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\Diamond-Cleaning\\wwwroot\\js\\site.js",

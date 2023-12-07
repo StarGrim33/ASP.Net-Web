@@ -26,6 +26,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\Diamond-Cleaning
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/AddRoles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxBZGRSb2xlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/EditStatus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxFZGl0U3RhdHVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/GetOrders.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxHZXRPcmRlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/MenuAdministrator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxNZW51QWRtaW5pc3RyYXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/Roles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxSb2xlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Authorization/Index.cshtml]

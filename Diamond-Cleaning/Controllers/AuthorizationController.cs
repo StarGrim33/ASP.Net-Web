@@ -19,7 +19,7 @@ namespace Diamond_Cleaning.Controllers
             if (ModelState.IsValid)
                 return RedirectToAction("Index", "Home");
 
-            return View("Index");
+            return RedirectToAction("Index");
         }
 
         public IActionResult Register()

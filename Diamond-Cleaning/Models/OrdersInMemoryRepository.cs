@@ -16,6 +16,11 @@ namespace Diamond_Cleaning.Models
             await Writer(order);
         }
 
+        public List<Order> GetAllOrders()
+        {
+            return _orders;
+        }
+
         private async Task Writer(Order order)
         {
             var options1 = new JsonSerializerOptions
