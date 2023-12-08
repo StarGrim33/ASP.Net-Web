@@ -4,11 +4,37 @@
     ViewData["Title"] = "Заказ оформлен";
 }
 <div class="text-center">
-    <h4>Уважаемый @Model.Name, ваш заказ успешно создан!</h4>
-
-    <div class="col-6 card shadow-lg">
+    <h4>Уважаемый @Model.User.Name, ваш заказ успешно создан!</h4>
+    <div class="row" style="font-size: 20px">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Цена руб</th>
+                        <th>Количество</th>
+                        <th>Стоимость руб</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr>
+                            <td>@item.Service.Name</td>
+                            <td>@item.Service.Cost</td>
+                            <td>@item.Amount</td>
+                            <td>@item.Cost</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            </div>
+</div>
+</div>
+<br />
+    <div class="col-12 card shadow-lg">
         <h4>Данные заказчика</h4>
-        <table class="table" style="font-size: 12px">
+        <table class="table" style="font-size: 20px">
             <thead>
                 <tr>
                     <th class="col-5">ФИО</th>
@@ -19,17 +45,14 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>@Model.Name</td>
-                    <td>@Model.Phone</td>
-                    <td>@Model.Email</td>
-                    <td>@Model.Address</td>
+                    <td>@Model.User.Name</td>
+                    <td>@Model.User.Phone</td>
+                    <td>@Model.User.Email</td>
+                    <td>@Model.User.Address</td>
                 </tr>
             </tbody>
         </table>
     </div>
-</div>
-<br />
-
 <h1>Заказ оформлен</h1>
 <a class="btn btn-outline-success btn-lg" asp-controller="home" asp-action="index" role="button">Вернуться на главную</a>
 

@@ -1,66 +1,39 @@
-﻿@model Cart;
+﻿@model Order;
+
 <form method="post">
 <div class="row">
-
-    @*форма заказа*@
-    <div class="col-5 card shadow-lg">        
-        <h4>Ваш заказ</h4>
-        <table class="table" style="font-size:12px">
-            <thead>
-                <tr>
-                    <th style="font-size:12px">Название</th>
-                    <th>Цена</th>
-                    <th>Количество</th>
-                    <th>Стоимость</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Items)
-                {
-                    <tr>
-                        <td>@item.Service.Name</td>
-                        <td>@item.Service.Cost руб.</td>
-                        <td>
-                            @item.Amount
-                        </td>
-                        <td>@item.Cost руб.</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-        <div class="text-end">
-            <h6>Итого: @Model.Cost руб.</h6>
-        </div>       
-    </div>
-    <div class="col-1"></div>
-    @*форма данных покупателя*@
-    <div class="col-6 card shadow-lg">
-        <form>
+        <div class="col-6 card shadow-lg">
+            <div class="text-danger font-weight-bold" asp-validation-summary="ModelOnly"></div>
             <div class="form-group" style="margin:10px">
-                <label for="exampleFormControlInput1">ФИО*</label>
-                    <input type="text" class="form-control" name="Name" id="exampleFormControlInput1" placeholder="Иванов Иван Васильевич">
+                <label asp-for="@Model.User.Name">ФИО*</label>
+                <input asp-for="@Model.User.Name" type="text" class="form-control" id="Name" placeholder="Фисенко Кирилл Андреевич" />
+                <span asp-validation-for="@Model.User.Name" />
             </div>
             <div class="form-group" style="margin:10px">
-                <label for="exampleFormControlInput2">Email*</label>
-                    <input type="email" class="form-control" name="Email" id="exampleFormControlInput2" placeholder="name@example.com">
+                <label asp-for="@Model.User.Email">Email*</label>
+                <input asp-for="@Model.User.Email" type="email" class="form-control" id="Email" placeholder="name@example.com" />
+                <span asp-validation-for="@Model.User.Email" />
             </div>
             <div class="form-group" style="margin:10px">
-                <label for="exampleFormControlInput3">Телефон*</label>
-                    <input type="text" class="form-control" name="Phone" id="exampleFormControlInput3" placeholder="+7-(967)-566-74-13">
-            </div>   
+                <label asp-for="@Model.User.Phone">Телефон*</label>
+                <input asp-for="@Model.User.Phone" type="text" class="form-control" id="Phone" placeholder="+7 (926) 546-3469" />
+                <span asp-validation-for="@Model.User.Phone" />
+            </div>
             <div class="form-group" style="margin:10px">
-                <label for="exampleFormControlInput4">Адрес*</label>
-                    <input type="text" class="form-control" name="Address" id="exampleFormControlInput4" placeholder="г. Владимир, ул. Большая Московская, д. 150">
+                <label asp-for="@Model.User.Address">Адрес*</label>
+                <input asp-for="@Model.User.Address" class="form-control" id="Address" placeholder="г. Владимир, ул. Большая Московская, д. 150">
+                <span asp-validation-for="@Model.User.Address" />
             </div>
             <div class="form-group" style="margin:10px">
                 <label for="exampleFormControlTextarea1">Комментарии к заказу</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-        </form>
-    </div>
+        </div>
+    <div class="col-1"></div>
     <div class="text-center" style="margin:30px">
         <a class="btn btn-outline-secondary btn-lg" asp-controller="Home" asp-action="Index" role="button">Продолжить покупки</a>
-        <button class="btn btn-success" type="submit" asp-controller="Order" asp-action="Make" role="button">Оформить заказ</button>>
+        <button class="btn btn-success" type="submit" asp-controller="Order" asp-action="Buy" role="button">Оформить заказ</button>
     </div>
 </div>
 </form>
+

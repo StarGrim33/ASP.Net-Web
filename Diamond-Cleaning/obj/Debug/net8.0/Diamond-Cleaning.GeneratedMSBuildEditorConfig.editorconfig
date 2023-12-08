@@ -17,99 +17,119 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Diamond_Cleaning
 build_property.RootNamespace = Diamond_Cleaning
-build_property.ProjectDir = C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\
+build_property.ProjectDir = C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\Diamond-Cleaning\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning
+build_property.MSBuildProjectDirectory = C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\Diamond-Cleaning
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/GetOrders.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/AddRoles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxBZGRSb2xlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/EditStatus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxFZGl0U3RhdHVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/GetOrders.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxHZXRPcmRlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/GetProducts.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/GetProducts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxHZXRQcm9kdWN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/GetRoles.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/GetRoles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxHZXRSb2xlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/GetUsers.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/GetUsers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxHZXRVc2Vycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/Index.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/MenuAdministrator.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/MenuAdministrator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxNZW51QWRtaW5pc3RyYXRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Authorization/Index.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Administrator/Roles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxSb2xlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Authorization/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Authorization/Register.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Authorization/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yaXphdGlvblxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Cart/Index.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Home/Index.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Home/Privacy.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Home/Search.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Home/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Order/Index.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Order/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Order/Success.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Order/Success.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcU3VjY2Vzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Service/Index.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Service/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Service/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Service/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Shared/Components/Cart/Cart.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Shared/Components/Cart/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2FydFxDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Shared/Error.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Shared/Header.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Shared/Header.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhlYWRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/_ViewImports.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/_ViewStart.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Views/Shared/_Layout.cshtml]
+[C:/Users/Влад и Аня/Desktop/C\# course/ASP.Net/ASP.Net-Web/Diamond-Cleaning/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-t3jnvibaxk

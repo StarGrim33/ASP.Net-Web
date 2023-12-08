@@ -1,0 +1,46 @@
+﻿@model Service
+
+<form method="post">
+    <h4>Редактирование товара</h4>
+    <br />
+    <div class="text-danger font-weight-bold" asp-validation-summary="ModelOnly"></div>
+    <div class="row">
+        <label for="name" class="col-sm-2 col-form-label">название товара:</label>
+        <div class="col-sm-8">
+            <label asp-for="Name">Name*</label>
+            <input asp-for="Name" type="text" class="form-control" id="Name" value="@Model.Name">
+            <span asp-validation-for="Name" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <label for="cost" class="col-sm-2 col-form-label">цена товара, руб.:</label>
+        <div class="col-sm-8">
+            <label asp-for="Cost">Cost*</label>
+            <input asp-for="Cost" type="text" class="form-control" id="Cost" value="@Model.Cost">
+            <span asp-validation-for="Cost" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <label for="link" class="col-sm-2 col-form-label">изображение товара:</label>
+        <div class="col-sm-8">
+            <label asp-for="Link">Image*</label>
+            <input asp-for="Link" type="text" class="form-control" id="Link" value="@Model.Link">
+            <span asp-validation-for="Link" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <label for="description" class="col-sm-2 col-form-label">описание товара:</label>
+        <div class="col-sm-8">
+            <label asp-for="Description">Description*</label>
+            <input asp-for="Description" type="text" class="form-control" id="Description" value="@Model.Description">
+            <span asp-validation-for="Description" />
+        </div>
+    </div>
+    <br />
+    <br />
+    <button type="submit" class="btn btn-primary" asp-controller="Service" asp-action="Edit" asp-route-id="@Model.Id">Сохранить</button>
+    <a class="btn btn-outline-primary" asp-controller="Administrator" asp-action="GetProducts">Отмена</a>
+</form>

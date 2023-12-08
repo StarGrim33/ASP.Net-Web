@@ -14,6 +14,7 @@ namespace Diamond_Cleaning
             .Enrich.WithProperty("DiamondClining", "Online Shop"));
 
             // Add services to the container.
+            builder.Services.AddSingleton<IRolesRepository, InMemoryRolesRepository>();
             builder.Services.AddSingleton<IServicesRepository, InMemoryServicesRepository>();
             builder.Services.AddSingleton<ICartsRepository, InMemoryCartsRepository>();
             builder.Services.AddSingleton<IOrdersRepository, OrdersInMemoryRepository>();

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\prosk\\OneDrive\\Документы\\GitHub\\ASP.Net-Web\\Diamond-Cleaning\\Diamond-Cleaning.csproj": {}
+    "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\Diamond-Cleaning\\Diamond-Cleaning.csproj": {}
   },
   "projects": {
-    "C:\\Users\\prosk\\OneDrive\\Документы\\GitHub\\ASP.Net-Web\\Diamond-Cleaning\\Diamond-Cleaning.csproj": {
+    "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\Diamond-Cleaning\\Diamond-Cleaning.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\prosk\\OneDrive\\Документы\\GitHub\\ASP.Net-Web\\Diamond-Cleaning\\Diamond-Cleaning.csproj",
+        "projectUniqueName": "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\Diamond-Cleaning\\Diamond-Cleaning.csproj",
         "projectName": "Diamond-Cleaning",
-        "projectPath": "C:\\Users\\prosk\\OneDrive\\Документы\\GitHub\\ASP.Net-Web\\Diamond-Cleaning\\Diamond-Cleaning.csproj",
-        "packagesPath": "C:\\Users\\prosk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\prosk\\OneDrive\\Документы\\GitHub\\ASP.Net-Web\\Diamond-Cleaning\\obj\\",
+        "projectPath": "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\Diamond-Cleaning\\Diamond-Cleaning.csproj",
+        "packagesPath": "C:\\Users\\Влад и Аня\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\Diamond-Cleaning\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\prosk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Влад и Аня\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

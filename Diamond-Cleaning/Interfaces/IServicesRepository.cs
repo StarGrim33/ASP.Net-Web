@@ -7,5 +7,7 @@ namespace Diamond_Cleaning.Interfaces
         List<Service> GetServices();
 
         Service? TryGetService(int id);
+
+        void Delete(int id);
     }
 }

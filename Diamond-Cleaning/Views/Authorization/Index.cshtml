@@ -1,16 +1,23 @@
-﻿<form method="post">
+﻿@model User
+
+<form method="post">
     <h4>Вход</h4>
     <br />
     <div class="row mb-3">
+        <div class="text-danger font-weight-bold" asp-validation-summary="ModelOnly"></div>
         <label for="login" class="col-sm-1 col-form-label">Логин</label>
         <div class="col-sm-3">
+            <label asp-for="Login">Электронная почта</label>
             <input name="Login" type="email" class="form-control" id="login" placeholder="Email">
+            <span asp-validation-for="Login">Login</span>
         </div>
     </div>
     <div class="row mb-3">
         <label for="password" class="col-sm-1 col-form-label">Пароль</label>
         <div class="col-sm-3">
+            <label asp-for="Password">Пароль</label>
             <input name="Password" type="password" class="form-control" id="password" placeholder="*********">
+            <span asp-validation-for="Password">Password</span>
         </div>
     </div>
     <div class="row mb-3">
@@ -23,6 +30,6 @@
             </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary" asp-controller="authorization" asp-action="enter">Войти</button>
-    <button type="submit" class="btn btn-outline-primary" asp-controller="authorization" asp-action="register">Зарегистрироваться</button>
+    <button type="submit" class="btn btn-primary" asp-controller="Authorization" asp-action="Authorize">Войти</button>
+    <button type="submit" class="btn btn-outline-primary" asp-controller="Authorization" asp-action="Register">Зарегистрироваться</button>
 </form>

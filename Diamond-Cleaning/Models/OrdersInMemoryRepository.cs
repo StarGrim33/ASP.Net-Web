@@ -7,13 +7,18 @@ namespace Diamond_Cleaning.Models
 {
     public class OrdersInMemoryRepository : IOrdersRepository
     {
-        private List<Cart> _orders = [];
+        private List<Order> _orders = [];
         private string _path = @"C:\Users\prosk\OneDrive\Desktop\C# course\Data.json";
 
-        public async Task Add(Cart cart, Order order)
+        public async Task Add(Order order)
         {
-            _orders.Add(cart);
+            _orders.Add(order);
             await Writer(order);
+        }
+
+        public List<Order> GetAllOrders()
+        {
+            return _orders;
         }
 
         private async Task Writer(Order order)

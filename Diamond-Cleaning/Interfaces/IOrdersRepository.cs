@@ -4,6 +4,8 @@ namespace Diamond_Cleaning.Interfaces
 {
     public interface IOrdersRepository
     {
-        Task Add(Cart cart, Order order);
+        Task Add(Order order);
+
+        List<Order> GetAllOrders();
     }
 }
