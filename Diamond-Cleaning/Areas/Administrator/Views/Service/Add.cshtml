@@ -1,7 +1,7 @@
-﻿@model Service
+﻿@model ServiceEdit
 
 <form method="post">
-    <h4>Редактирование товара</h4>
+    <h4>Добавление товара</h4>
     <br />
     <div class="text-danger font-weight-bold" asp-validation-summary="ModelOnly"></div>
     <div class="row">
@@ -23,10 +23,10 @@
     </div>
     <br />
     <div class="row">
-        <label for="link" class="col-sm-2 col-form-label">изображение товара:</label>
+        <label for="imagePath" class="col-sm-2 col-form-label">изображение товара:</label>
         <div class="col-sm-8">
             <label asp-for="Link">Image*</label>
-            <input asp-for="Link" type="text" class="form-control" id="Link" value="@Model.Link">
+            <input asp-for="Link" type="text" class="form-control" id="ImagePath" value="@Model.Link">
             <span asp-validation-for="Link" />
         </div>
     </div>
@@ -41,6 +41,6 @@
     </div>
     <br />
     <br />
-    <button type="submit" class="btn btn-primary" asp-controller="Service" asp-action="Edit" asp-route-id="@Model.Id">Сохранить</button>
-    <a class="btn btn-outline-primary" asp-controller="Administrator" asp-action="GetProducts">Отмена</a>
+    <button type="submit" class="btn btn-primary" asp-area="Administrator" asp-controller="Service" asp-action="Add">Сохранить</button>
+    <a class="btn btn-outline-primary" asp-area="Administrator" asp-controller="Administrator" asp-action="Index">Отмена</a>
 </form>

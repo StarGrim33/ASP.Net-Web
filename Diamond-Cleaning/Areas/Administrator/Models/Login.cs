@@ -1,4 +1,4 @@
-﻿namespace Diamond_Cleaning.Models
+﻿namespace Diamond_Cleaning.Areas.Administator.Models
 {
     public class Login
     {

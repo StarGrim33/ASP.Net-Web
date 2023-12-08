@@ -9,6 +9,7 @@ namespace Diamond_Cleaning
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
             builder.Host.UseSerilog((context, configuration) => configuration
             .ReadFrom.Configuration(context.Configuration)
             .Enrich.WithProperty("DiamondClining", "Online Shop"));
@@ -39,14 +40,15 @@ namespace Diamond_Cleaning
             app.UseSerilogRequestLogging();
 
             app.MapControllerRoute(
+                name: "MyArea",
+                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+
+            app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}"
                 );
 
-            app.MapControllerRoute(
-                name: "1",
-                pattern: "{controller=Service}/{action=Index}/{id?}"
-                );
             app.Run();
         }
     }

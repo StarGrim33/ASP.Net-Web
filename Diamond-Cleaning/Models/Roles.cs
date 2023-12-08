@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace Diamond_Cleaning.Models
 {
@@ -6,14 +7,13 @@ namespace Diamond_Cleaning.Models
     {
         public Roles() { }
 
-        public Roles(string name) 
-        { 
+        public Roles(string name)
+        {
             Name = name;
         }
 
-        [Required(ErrorMessage="Не указано имя роли")]
-        [StringLength(50, MinimumLength=1, ErrorMessage= "Имя роли должно содержать от 1 до 50 символов")]
+        [Required(ErrorMessage = "Не указано имя роли")]
+        [StringLength(50, MinimumLength = 1, ErrorMessage = "Имя роли должно содержать от 1 до 50 символов")]
         public string Name { get; set; }
-
     }
 }

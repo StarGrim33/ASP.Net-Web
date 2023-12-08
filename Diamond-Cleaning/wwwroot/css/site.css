@@ -8,7 +8,7 @@ html {
   }
 }
 
-.timeStyle {
+timeStyle {
     color: darkcyan;
     font-size: 20px;
     display: block;
@@ -16,17 +16,17 @@ html {
     margin-right: auto;
 }
 
-.headerText{
+headerText{
     color: deepskyblue;
     font-size: 25px;
 }
 
-.textStyle{
+textStyle{
     color: burlywood;
     font-size: 18px;
 }
 
-.footer-info__contact {
+footer-info__contact {
     color: chocolate;
     font-size: 16px;
     align-items: center;
