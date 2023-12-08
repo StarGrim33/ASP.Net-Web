@@ -1,5 +1,6 @@
 using Diamond_Cleaning.Interfaces;
 using Diamond_Cleaning.Models;
+using Serilog;
 
 namespace Diamond_Cleaning
 {
@@ -8,6 +9,9 @@ namespace Diamond_Cleaning
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Host.UseSerilog((context, configuration) => configuration
+            .ReadFrom.Configuration(context.Configuration)
+            .Enrich.WithProperty("DiamondClining", "Online Shop"));
 
             // Add services to the container.
             builder.Services.AddSingleton<IServicesRepository, InMemoryServicesRepository>();
@@ -31,7 +35,7 @@ namespace Diamond_Cleaning
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseSerilogRequestLogging();
 
             app.MapControllerRoute(
                 name: "default",
