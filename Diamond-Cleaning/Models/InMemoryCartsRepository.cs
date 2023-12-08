@@ -1,5 +1,4 @@
-﻿
-using Diamond_Cleaning.Interfaces;
+﻿using Diamond_Cleaning.Interfaces;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
