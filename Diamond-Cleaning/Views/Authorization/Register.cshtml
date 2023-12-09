@@ -1,4 +1,4 @@
-﻿@model User
+﻿@model Register
 
 <form method="post">
     <h4>Регистрация</h4>
@@ -7,9 +7,9 @@
     <div class="row mb-3">
         <label for="login" class="col-sm-1 col-form-label">Логин</label>
         <div class="col-sm-3">
-            <label asp-for="Login">Электронная почта</label>
-            <input name="Login" type="email" class="form-control" id="login" placeholder="Email">
-            <span asp-validation-for="Login">Login</span>
+            <label asp-for="UserName">Электронная почта</label>
+            <input name="UserName" type="email" class="form-control" id="UserName" placeholder="Email">
+            <span asp-validation-for="UserName">Login</span>
         </div>
     </div>
     <div class="row mb-3">
@@ -23,10 +23,34 @@
     <div class="row mb-3">
         <label for="password" class="col-sm-1 col-form-label">Повторите пароль</label>
         <div class="col-sm-3">
-            <label asp-for="Password">Подтвердить пароль</label>
-            <input name="RepeatPassword" type="password" class="form-control" id="ConfirmPassword" placeholder="*********">
-            <span asp-validation-for="RepeatPassword">RepeatPassword</span>
+            <label asp-for="ConfirmPassword">Подтвердить пароль</label>
+            <input name="ConfirmPassword" type="password" class="form-control" id="ConfirmPassword" placeholder="*********">
+            <span asp-validation-for="ConfirmPassword">RepeatPassword</span>
         </div>
     </div>
-    <button type="submit" class="btn btn-outline-primary" asp-controller="authorization" asp-action="AddNewUser">Зарегистрироваться</button>
+    <div class="row mb-3">
+        <label for="password" class="col-sm-1 col-form-label">Имя</label>
+        <div class="col-sm-3">
+            <label asp-for="FirstName">Ваше имя</label>
+            <input name="FirstName" type="text" class="form-control" id="FirstName" placeholder="*********">
+            <span asp-validation-for="FirstName">FirstName</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="password" class="col-sm-1 col-form-label">Фамилия</label>
+        <div class="col-sm-3">
+            <label asp-for="LastName">Ваша фамилия</label>
+            <input name="LastName" type="text" class="form-control" id="LastName" placeholder="*********">
+            <span asp-validation-for="LastName">LastName</span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="password" class="col-sm-1 col-form-label">Фамилия</label>
+        <div class="col-sm-3">
+            <label asp-for="Phone">Телефон</label>
+            <input name="Phone" type="number" class="form-control" id="Phone" placeholder="*********">
+            <span asp-validation-for="Phone">Phone</span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary" asp-controller="authorization" asp-action="Register">Зарегистрироваться</button>
 </form>

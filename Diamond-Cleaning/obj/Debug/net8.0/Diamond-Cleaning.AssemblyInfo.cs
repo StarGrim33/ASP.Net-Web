@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Diamond-Cleaning")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9742ac00a3c37b4d8732ce4ec52b12420ed7ccb4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16f24d2c62e46b053fbfca1b79399f6e1ac2d4e1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Diamond-Cleaning")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Diamond-Cleaning")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

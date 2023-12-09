@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace Diamond_Cleaning.Models
 {
@@ -8,10 +9,15 @@ namespace Diamond_Cleaning.Models
         {
         }
 
-        public User(string name)
+        public User(string name, string password, string firstName, string lastName, string phone)
         {
-            Name = name;
             Guid = Guid.NewGuid();
+            Role = new Roles("User");
+            Name = name;
+            Password = password;
+            FirstName = firstName;
+            LastName = lastName;
+            Phone = phone;
         }
 
         public Guid Guid { get; set; }
@@ -20,9 +26,9 @@ namespace Diamond_Cleaning.Models
         [StringLength(25, MinimumLength = 2, ErrorMessage = "Длина должна быть от 2 до 25 символов")]
         public string? Name { get; set; }
 
-        [Required(ErrorMessage = "Не указана электронная почта")]
-        [EmailAddress(ErrorMessage="Нужно ввести валидный адрес электронной почты")]
-        public string Login { get; set; }
+        //[Required(ErrorMessage = "Не указана электронная почта")]
+        //[EmailAddress(ErrorMessage="Нужно ввести валидный адрес электронной почты")]
+        //public string Login { get; set; }
 
         [Required(ErrorMessage = "Не указан пароль")]
         public string Password { get; set; }
@@ -34,5 +40,13 @@ namespace Diamond_Cleaning.Models
         public string CheckBox { get; set; }
 
         public bool DoRememberMe => CheckBox == "on";
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public string Phone { get; set; }
+
+        public Roles Role { get; set; }
     }
 }

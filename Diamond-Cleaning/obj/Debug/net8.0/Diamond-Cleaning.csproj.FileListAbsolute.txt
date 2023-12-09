@@ -472,3 +472,15 @@ C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\Diamond-Cleani
 C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Serilog.Sinks.Console.dll
 C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Serilog.Sinks.File.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Serilog.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Serilog.Enrichers.Environment.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Serilog.Enrichers.Process.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Serilog.Enrichers.Thread.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Serilog.Sinks.File.dll

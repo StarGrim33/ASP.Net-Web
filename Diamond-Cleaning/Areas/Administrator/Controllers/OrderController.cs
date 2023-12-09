@@ -19,6 +19,7 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
             var orders = _ordersRepository.GetAllOrders();
             return View(orders);
         }
+
         public IActionResult EditStatus(Guid id)
         {
             var orders = _ordersRepository.GetAllOrders();

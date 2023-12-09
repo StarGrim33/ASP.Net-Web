@@ -1,4 +1,4 @@
-﻿@model User
+﻿@model Login
 
 <form method="post">
     <h4>Вход</h4>
@@ -7,9 +7,9 @@
         <div class="text-danger font-weight-bold" asp-validation-summary="ModelOnly"></div>
         <label for="login" class="col-sm-1 col-form-label">Логин</label>
         <div class="col-sm-3">
-            <label asp-for="Login">Электронная почта</label>
-            <input name="Login" type="email" class="form-control" id="login" placeholder="Email">
-            <span asp-validation-for="Login">Login</span>
+            <label asp-for="Name">Электронная почта</label>
+            <input name="Name" type="email" class="form-control" id="Name" placeholder="Email">
+            <span asp-validation-for="Name">Login</span>
         </div>
     </div>
     <div class="row mb-3">
@@ -30,6 +30,6 @@
             </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary" asp-controller="Authorization" asp-action="Authorize">Войти</button>
+    <button type="submit" class="btn btn-primary" asp-controller="Authorization" asp-action="Login">Войти</button>
     <button type="submit" class="btn btn-outline-primary" asp-controller="Authorization" asp-action="Register">Зарегистрироваться</button>
 </form>
