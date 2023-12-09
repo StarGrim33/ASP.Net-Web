@@ -61,16 +61,6 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
             return View(user);
         }
 
-        public IActionResult DetailsByUser(string name)
-        {
-            var user = _usersRepository.TryGetByName(name);
-
-            if (user == null)
-                return View(nameof(GetUsers));
-
-            return View(user);
-        }
-
         public IActionResult Delete(Guid userId)
         {
             _usersRepository.Delete(userId);
