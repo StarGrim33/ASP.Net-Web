@@ -48,12 +48,12 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
             }
 
             _usersRepository.Add(new User(register.UserName, register.Password, register.FirstName, register.LastName, register.Phone));
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("GetUsers");
         }
 
-        public IActionResult Details(Guid userId)
+        public IActionResult Details(Guid guid)
         {
-            var user = _usersRepository.TryGetById(userId);
+            var user = _usersRepository.TryGetById(guid);
 
             if (user == null)
                 return View(nameof(GetUsers));
@@ -91,22 +91,20 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
             }
 
             _usersRepository.Edit(user, userId);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(GetUsers));
         }
 
         public IActionResult ChangePassword(Guid userId)
         {
             var user = _usersRepository.TryGetById(userId);
-            ViewData["userId"] = userId;
-            ViewData["userName"] = user.Name;
-            return View();
+            return View(user);
         }
 
         [HttpPost]
         public IActionResult ChangePassword(Guid userId, string password)
         {
             _usersRepository.ChangePassword(userId, password);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(GetUsers));
         }
 
         public IActionResult ChangeAccess(Guid userId)
@@ -123,7 +121,7 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
         public IActionResult ChangeAccess(Guid userId, string role)
         {
             _usersRepository.ChangeAccess(userId, role);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(GetUsers));
         }
     }
 }

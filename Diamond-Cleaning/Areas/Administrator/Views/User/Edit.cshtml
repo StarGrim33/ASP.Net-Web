@@ -1,0 +1,46 @@
+﻿@model EditUser
+
+<form asp-area="Administrator" method="post">
+    <h4>Редактирование данных для @ViewData["userId"]</h4>
+    <br />
+    <div class="text-danger font-weight-bold" asp-validation-summary="ModelOnly"></div>
+    <div class="row">
+        <label for="name" class="col-sm-2 col-form-label">Логин:</label>
+        <div class="col-sm-8">
+            <label asp-for="Name">Name*</label>
+            <input asp-for="Name" type="text" class="form-control" id="Name" value="@Model.Name">
+            <span asp-validation-for="Name" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <label for="cost" class="col-sm-2 col-form-label">Имя:</label>
+        <div class="col-sm-8">
+            <label asp-for="FirstName">FirstName*</label>
+            <input asp-for="FirstName" type="text" class="form-control" id="FirstName" value="@Model.FirstName">
+            <span asp-validation-for="FirstName" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <label for="link" class="col-sm-2 col-form-label">Фамилия:</label>
+        <div class="col-sm-8">
+            <label asp-for="LastName">LastName*</label>
+            <input asp-for="LastName" type="text" class="form-control" id="LastName" value="@Model.LastName">
+            <span asp-validation-for="LastName" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <label for="description" class="col-sm-2 col-form-label">Телефон:</label>
+        <div class="col-sm-8">
+            <label asp-for="Phone">Phone*</label>
+            <input asp-for="Phone" type="text" class="form-control" id="Phone" value="@Model.Phone">
+            <span asp-validation-for="Phone" />
+        </div>
+    </div>
+    <br />
+    <br />
+    <button type="submit" class="btn btn-primary" asp-area="Administrator" asp-controller="User" asp-action="Edit" asp-route-userId="@ViewData["userId"]">Сохранить</button>
+    <a class="btn btn-outline-primary" asp-area="Administrator" asp-controller="User" asp-action="GetUsers">Отмена</a>
+</form>

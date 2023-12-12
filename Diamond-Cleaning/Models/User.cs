@@ -7,12 +7,11 @@ namespace Diamond_Cleaning.Models
     {
         public User()
         {
-            Guid = Guid.NewGuid();
-
         }
 
         public User(string name, string password, string firstName, string lastName, string phone)
         {
+            Guid = Guid.NewGuid();
             Role = new Roles("User");
             Name = name;
             Password = password;

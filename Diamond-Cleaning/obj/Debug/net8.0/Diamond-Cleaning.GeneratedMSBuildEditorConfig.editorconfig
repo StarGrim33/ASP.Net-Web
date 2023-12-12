@@ -70,8 +70,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRvclxWaWV3c1xTaGFyZWRcTWVudUFkbWluaXN0cmF0b3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Areas/Administrator/Views/User/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRvclxWaWV3c1xVc2VyXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Areas/Administrator/Views/User/ChangeAccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRvclxWaWV3c1xVc2VyXENoYW5nZUFjY2Vzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Areas/Administrator/Views/User/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRvclxWaWV3c1xVc2VyXENoYW5nZVBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Areas/Administrator/Views/User/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRvclxWaWV3c1xVc2VyXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Areas/Administrator/Views/User/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5pc3RyYXRvclxWaWV3c1xVc2VyXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/prosk/OneDrive/Документы/GitHub/ASP.Net-Web/Diamond-Cleaning/Areas/Administrator/Views/User/GetUsers.cshtml]
