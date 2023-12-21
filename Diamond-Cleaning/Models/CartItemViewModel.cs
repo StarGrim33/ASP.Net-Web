@@ -1,10 +1,10 @@
 ﻿namespace Diamond_Cleaning.Models
 {
-    public class CartItem
+    public class CartItemViewModel
     {
         public Guid Id {  get; set;}
 
-        public Service Service { get; set;}
+        public ServiceViewModel Service { get; set;}
 
         public int Amount { get; set;}
 

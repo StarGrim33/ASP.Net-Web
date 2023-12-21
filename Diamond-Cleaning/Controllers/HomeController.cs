@@ -1,6 +1,8 @@
-﻿using Diamond_Cleaning.Interfaces;
+﻿using Diamond_Cleaning.Helpers;
+using Diamond_Cleaning.Interfaces;
 using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Db;
 using System.Diagnostics;
 
 namespace Diamond_Cleaning.Controllers
@@ -21,11 +23,13 @@ namespace Diamond_Cleaning.Controllers
         public IActionResult Index()
         {
             var cart = _cartsRepository.TryGetByUserId(Constants.UserId);
-            ViewBag.ProductCount = cart?.Amount;
+            var cartViewModel = Mapping.ToCartViewModel(cart);
+            ViewBag.ProductCount = cartViewModel?.Amount;
             ViewData["CurrentDate"] = $"Сегодня: {DateOnly.FromDateTime(DateTime.Now)}";
             ViewData["LastWeekStartDate"] = DateOnly.FromDateTime(DateTime.Now.AddDays(-7));
             var services = _servicesRepository.GetServices();
-            return View(services);
+
+            return View(Mapping.ToServiceViewModels(services));
         }
 
         public IActionResult Privacy()

@@ -1,6 +1,8 @@
-﻿using Diamond_Cleaning.Interfaces;
+﻿using Diamond_Cleaning.Helpers;
 using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Db;
+using OnlineShop.Db.Models;
 
 namespace Diamond_Cleaning.Areas.Administator.Controllers
 {
@@ -17,40 +19,46 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
         public IActionResult GetProducts()
         {
             var services = _servicesRepository.GetServices();
-
-            if (services != null)
-                return View(services);
-            else
-                return RedirectToAction("Index", "Home");
+            return View(Mapping.ToServiceViewModels(services));
         }
 
-        public IActionResult? Index(int id)
+        public IActionResult? Index(Guid id)
         {
-            Service? service = _servicesRepository.TryGetService(id);
+            var service = _servicesRepository.TryGetService(id);
 
             return View(service);
         }
 
-        public IActionResult Delete(int id)
+        public IActionResult Delete(Guid id)
         {
             _servicesRepository.Delete(id);
             return RedirectToAction("GetProducts");
         }
 
-        public IActionResult Edit(int id)
+        public IActionResult Edit(Guid id)
         {
             var product = _servicesRepository.TryGetService(id);
-            return View(product);
+
+            ServiceViewModel serviceViewModel = new()
+            {
+                Id = id,
+                Cost = product.Cost,
+                Description = product.Description,
+                Link = product.Link
+            };
+
+            return View(serviceViewModel);
         }
 
         [HttpPost]
-        public IActionResult Edit(ServiceEdit serviceEdit, int id)
+        public IActionResult Edit(ServiceViewModel serviceViewModel, Guid id)
         {
             var currentProduct = _servicesRepository.TryGetService(id);
-            currentProduct.Name = serviceEdit.Name;
-            currentProduct.Cost = serviceEdit.Cost;
-            currentProduct.Description = serviceEdit.Description;
-            currentProduct.Link = serviceEdit.Link;
+            currentProduct.Name = serviceViewModel.Name;
+            currentProduct.Cost = serviceViewModel.Cost;
+            currentProduct.Description = serviceViewModel.Description;
+            currentProduct.Link = serviceViewModel.Link;
+            _servicesRepository.Update(currentProduct);
             return RedirectToAction("GetProducts");
         }
 
@@ -58,18 +66,25 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
         {
             if (ModelState.IsValid)
             {
-                ServiceEdit serviceEdit = new();
-                return View(serviceEdit);
+                ServiceViewModel serviceViewModel = new();
+                return View(serviceViewModel);
             }
 
             return RedirectToAction("GetProducts");
         }
 
         [HttpPost]
-        public IActionResult Add(ServiceEdit newProduct)
+        public IActionResult Add(ServiceViewModel newProduct)
         {
-            var products = _servicesRepository.GetServices();
-            products.Add(new Service(newProduct.Name, newProduct.Description, newProduct.Cost, newProduct.Link));
+            Service service = new()
+            {
+                Name = newProduct.Name,
+                Cost = newProduct.Cost,
+                Description = newProduct.Description,
+                Link = newProduct.Link,
+            };
+
+            _servicesRepository.Add(service);
             return RedirectToAction("GetProducts");
         }
     }

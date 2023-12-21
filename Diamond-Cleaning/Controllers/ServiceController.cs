@@ -1,6 +1,7 @@
-﻿using Diamond_Cleaning.Interfaces;
-using Diamond_Cleaning.Models;
+﻿using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Db;
+using OnlineShop.Db.Models;
 
 namespace Diamond_Cleaning.Controllers
 {
@@ -13,27 +14,26 @@ namespace Diamond_Cleaning.Controllers
             _services = services;
         }
 
-        public IActionResult? Index(int id)
+        public IActionResult? Index(Guid id)
         {
-            Service? service = _services.TryGetService(id);
-
+            var service = _services.TryGetService(id);
             return View(service);
         }
 
-        public IActionResult Delete(int id)
+        public IActionResult Delete(Guid id)
         {
             _services.Delete(id);
             return RedirectToAction("GetProducts", "Administrator");
         }
 
-        public IActionResult Edit(int id)
+        public IActionResult Edit(Guid id)
         {
             var product = _services.TryGetService(id);
             return View(product);
         }
 
         [HttpPost]
-        public IActionResult Edit(ServiceEdit serviceEdit, int id)
+        public IActionResult Edit(ServiceEdit serviceEdit, Guid id)
         {
             var currentProduct = _services.TryGetService(id);
             currentProduct.Name = serviceEdit.Name;
@@ -54,12 +54,11 @@ namespace Diamond_Cleaning.Controllers
             return View("Add");
         }
 
-        [HttpPost]
-        public IActionResult Add(ServiceEdit newProduct)
-        {
-            var products = _services.GetServices();
-            products.Add(new Service(newProduct.Name, newProduct.Description, newProduct.Cost, newProduct.Link));
-            return RedirectToAction("GetProducts", "Administrator");
-        }
+        //[HttpPost]
+        //public IActionResult Add(ServiceEdit newProduct)
+        //{
+        //    _services.Add()
+        //    return RedirectToAction("GetProducts", "Administrator");
+        //}
     }
 }

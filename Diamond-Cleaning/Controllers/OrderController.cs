@@ -1,6 +1,8 @@
-﻿using Diamond_Cleaning.Interfaces;
+﻿using Diamond_Cleaning.Helpers;
+using Diamond_Cleaning.Interfaces;
 using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Db;
 
 namespace Diamond_Cleaning.Controllers
 {
@@ -38,10 +40,11 @@ namespace Diamond_Cleaning.Controllers
             }
 
             var existingCart = _cartsRepository.TryGetByUserId(Constants.UserId);
+            var existingCartViewModel = Mapping.ToCartViewModel(existingCart);
             var order = new Order
             {
                 User = user,
-                Items = existingCart.Items
+                Items = existingCartViewModel.Items
             };
 
             _ordersRepository.Add(order);

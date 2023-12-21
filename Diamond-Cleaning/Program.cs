@@ -11,7 +11,7 @@ namespace Diamond_Cleaning
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            string connection = builder.Configuration.GetConnectionString("online_shop");
+            string connection = builder.Configuration.GetConnectionString("OnlineShop");
 
             builder.Host.UseSerilog((context, configuration) => configuration
             .ReadFrom.Configuration(context.Configuration)
@@ -21,8 +21,8 @@ namespace Diamond_Cleaning
             builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connection));
             builder.Services.AddSingleton<IRolesRepository, InMemoryRolesRepository>();
             builder.Services.AddSingleton<IUsersRepository, UsersInMemoryRepository>();
-            builder.Services.AddSingleton<IServicesRepository, InMemoryServicesRepository>();
-            builder.Services.AddSingleton<ICartsRepository, InMemoryCartsRepository>();
+            builder.Services.AddTransient<IServicesRepository, ServiceDbRepository>();
+            builder.Services.AddTransient<ICartsRepository, CartsDbRepository>();
             builder.Services.AddSingleton<IOrdersRepository, OrdersInMemoryRepository>();
             builder.Services.AddControllersWithViews();
 

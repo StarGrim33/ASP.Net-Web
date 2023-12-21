@@ -2,21 +2,9 @@
 
 namespace Diamond_Cleaning.Models
 {
-    public class Service
+    public class ServiceViewModel
     {
-        private static int _instanceId = 0;
-
-        public Service(string? name, string? description, decimal cost, string? link)
-        {
-            Name = name;
-            Description = description;
-            Cost = cost;
-            Link = link;
-            Id = _instanceId;
-            _instanceId += 1;
-        }
-
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "Не указано наименование товара")]
         [StringLength(70, MinimumLength = 3, ErrorMessage = "Наименование должно содержать от 3 до 70 символов")]
@@ -33,10 +21,5 @@ namespace Diamond_Cleaning.Models
         [Required(ErrorMessage = "Не указан путь изображения товара")]
         [StringLength(100, MinimumLength = 1, ErrorMessage = "Путь должен содержать от 1 до 100 символов")]
         public string? Link { get; set; }
-
-        public override string ToString()
-        {
-            return $"\n{Id}, \n{Name}, \n{Cost}, \n{Description}";
-        }
     }
 }

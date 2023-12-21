@@ -17,7 +17,7 @@ namespace Diamond_Cleaning.Models
 
         public UserOrderInfo User { get; set; }
 
-        public List<CartItem> Items { get; set; }
+        public List<CartItemViewModel> Items { get; set; }
 
         public string Date { get; set; }
 

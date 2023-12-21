@@ -2,11 +2,11 @@
 
 namespace Diamond_Cleaning.Models
 {
-    public class Cart
+    public class CartViewModel
     {
-        public List<CartItem> Items;
+        public List<CartItemViewModel> Items;
 
-        public Cart()
+        public CartViewModel()
         {
             Items = [];
         }

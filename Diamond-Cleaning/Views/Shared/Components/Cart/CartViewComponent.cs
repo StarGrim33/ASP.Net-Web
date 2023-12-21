@@ -1,5 +1,8 @@
-﻿using Diamond_Cleaning.Interfaces;
+﻿using Diamond_Cleaning.Helpers;
+using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Db;
+using OnlineShop.Db.Models;
 
 namespace Diamond_Cleaning.Views.Shared.ViewComponents.CartViewComponents
 {
@@ -15,7 +18,9 @@ namespace Diamond_Cleaning.Views.Shared.ViewComponents.CartViewComponents
         public IViewComponentResult Invoke()
         {
             var cart = _cartRepository.TryGetByUserId(Constants.UserId);
-            var productCounts = cart?.Amount ?? 0;
+            var cartViewModel = Mapping.ToCartViewModel(cart);
+         
+            var productCounts = cartViewModel?.Amount ?? 0;
             return View("Cart", productCounts);
         }
     }

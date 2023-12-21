@@ -1,6 +1,6 @@
-﻿using Diamond_Cleaning.Models;
+﻿using OnlineShop.Db.Models;
 
-namespace Diamond_Cleaning.Interfaces
+namespace OnlineShop.Db
 {
     public interface ICartsRepository
     {

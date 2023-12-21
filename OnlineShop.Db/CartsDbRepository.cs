@@ -1,22 +1,22 @@
-﻿using Diamond_Cleaning.Interfaces;
-using Microsoft.AspNetCore.Http.Features;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
+﻿using Microsoft.EntityFrameworkCore;
+using OnlineShop.Db.Models;
 
-namespace Diamond_Cleaning.Models
+namespace OnlineShop.Db
 {
-    public class InMemoryCartsRepository : ICartsRepository
+    public class CartsDbRepository : ICartsRepository
     {
-        private List<Cart> _carts;
+        private readonly DatabaseContext _databaseContext;
 
-        public InMemoryCartsRepository()
+        public CartsDbRepository(DatabaseContext databaseContext)
         {
-            _carts = [];
+            _databaseContext = databaseContext;
         }
 
         public Cart TryGetByUserId(string userId)
         {
-            return _carts.FirstOrDefault(c => c.UserId == userId);
+            return _databaseContext.Carts.Include(x => x.Items).
+                ThenInclude(x => x.Service).
+                FirstOrDefault(c => c.UserId == userId);
         }
 
         public void Add(Service service, string userId)
@@ -27,20 +27,20 @@ namespace Diamond_Cleaning.Models
             {
                 var newCart = new Cart()
                 {
-                    Id = Guid.NewGuid(),
-                    UserId = userId,
-                    Items = new List<CartItem>()
-                    {
-                        new CartItem()
-                        {
-                            Id = Guid.NewGuid(),
-                            Amount = 1,
-                            Service = service
-                        }
-                    }
+                    UserId = userId
                 };
 
-                _carts.Add(newCart);
+                newCart.Items = new List<CartItem>()
+                    {
+                        new()
+                        {
+                            Amount = 1,
+                            Service = service,
+                            Cart = newCart
+                        }
+                    };
+
+                _databaseContext.Carts.Add(newCart);   
             }
             else
             {
@@ -54,28 +54,30 @@ namespace Diamond_Cleaning.Models
                 {
                     existingCart.Items.Add(new CartItem()
                     {
-                        Id = Guid.NewGuid(),
                         Amount = 1,
-                        Service = service
+                        Service = service,
+                        Cart = existingCart
                     });
                 }
             }
         }
 
-        public void Delete(Service service, string userId) 
+        public void Delete(Service service, string userId)
         {
             var existingCart = TryGetByUserId(userId);
             var existingCartItem = existingCart.Items.FirstOrDefault(item => item.Service.Id == service.Id);
-            
-            if(existingCartItem != null)
+
+            if (existingCartItem != null)
             {
                 existingCartItem.Amount--;
 
                 if (existingCart.Items.Count == 0)
-                    _carts.Remove(existingCart);
+                    _databaseContext.Carts.Remove(existingCart);
 
                 if (existingCartItem.Amount == 0)
-                    existingCart.Items.Remove(existingCartItem); 
+                    existingCart.Items.Remove(existingCartItem);
+
+                _databaseContext.SaveChanges();
             }
         }
 
@@ -84,7 +86,7 @@ namespace Diamond_Cleaning.Models
             ArgumentNullException.ThrowIfNull(userId);
 
             var existingCart = TryGetByUserId(userId);
-            _carts.Remove(existingCart);
+            _databaseContext.Carts.Remove(existingCart);
         }
     }
 }
