@@ -23,6 +23,9 @@
                     <li>
                         <a class="nav-link text-dark" asp-area="administrator" asp-controller="administrator" asp-action="index"> <i class="bi bi-database"></i> Администратор </a>
                     </li>
+                    <li>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Favourite" asp-action="index"> Избранное @await Component.InvokeAsync("CalculateFavouriteServiceCount")</a>
+                    </li>
                 </ul>
             </div>
             <nav class="navbar bg-body-tertiary">

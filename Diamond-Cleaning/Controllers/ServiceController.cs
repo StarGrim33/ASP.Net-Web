@@ -1,6 +1,7 @@
-﻿using Diamond_Cleaning.Models;
+﻿using Diamond_Cleaning.Helpers;
+using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Mvc;
-using OnlineShop.Db;
+using OnlineShop.Db.Interfaces;
 using OnlineShop.Db.Models;
 
 namespace Diamond_Cleaning.Controllers
@@ -14,10 +15,10 @@ namespace Diamond_Cleaning.Controllers
             _services = services;
         }
 
-        public IActionResult? Index(Guid id)
+        public IActionResult? Index(Guid serviceId)
         {
-            var service = _services.TryGetService(id);
-            return View(service);
+            var service = _services.TryGetService(serviceId);
+            return View(Mapping.ToServiceViewModel(service));
         }
 
         public IActionResult Delete(Guid id)

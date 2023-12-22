@@ -1,7 +1,7 @@
 ﻿using Diamond_Cleaning.Helpers;
 using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Mvc;
-using OnlineShop.Db;
+using OnlineShop.Db.Interfaces;
 using OnlineShop.Db.Models;
 
 namespace Diamond_Cleaning.Views.Shared.ViewComponents.CartViewComponents

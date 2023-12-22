@@ -2,6 +2,7 @@ using Diamond_Cleaning.Interfaces;
 using Diamond_Cleaning.Models;
 using Microsoft.EntityFrameworkCore;
 using OnlineShop.Db;
+using OnlineShop.Db.Interfaces;
 using Serilog;
 
 namespace Diamond_Cleaning
@@ -22,6 +23,8 @@ namespace Diamond_Cleaning
             builder.Services.AddSingleton<IRolesRepository, InMemoryRolesRepository>();
             builder.Services.AddSingleton<IUsersRepository, UsersInMemoryRepository>();
             builder.Services.AddTransient<IServicesRepository, ServiceDbRepository>();
+            builder.Services.AddTransient<ICompareServices, CompareDbRepository>();
+            builder.Services.AddTransient<IFavouriteRepository, FavouriteDbRepository>();
             builder.Services.AddTransient<ICartsRepository, CartsDbRepository>();
             builder.Services.AddSingleton<IOrdersRepository, OrdersInMemoryRepository>();
             builder.Services.AddControllersWithViews();

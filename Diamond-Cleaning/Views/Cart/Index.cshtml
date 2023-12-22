@@ -31,8 +31,8 @@ else
                             <td>@item.Service.Cost</td>
                             <td>
                                 @item.Amount
-                                <a class="btn btn-outline-primary btn-sm" href="/cart/add?productId=@item.Service.Id">+</a>
-                                <a class="btn btn-outline-primary btn-sm" href="/cart/delete?productId=@item.Service.Id">-</a>
+                                <a class="btn btn btn-outline-primary" asp-area="" asp-controller="Cart" asp-action="Add" asp-route-serviceId="@item.Service.Id" role="button">+</a>
+                                <a class="btn btn btn-outline-primary" asp-area="" asp-controller="Cart" asp-action="Delete" asp-route-serviceId="@item.Service.Id" role="button">-</a>
                             </td>
                             <td>@item.Cost</td>
                         </tr>

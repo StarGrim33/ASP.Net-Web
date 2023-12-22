@@ -1,8 +1,6 @@
 ﻿using Diamond_Cleaning.Helpers;
-using Diamond_Cleaning.Interfaces;
-using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Mvc;
-using OnlineShop.Db;
+using OnlineShop.Db.Interfaces;
 
 namespace Diamond_Cleaning.Controllers
 {
@@ -17,11 +15,11 @@ namespace Diamond_Cleaning.Controllers
             _cartRepository = cartRepository;
         }
 
-        public IActionResult Add(Guid productId)
+        public IActionResult Add(Guid serviceId)
         {
             try
             {
-                var item = _productRepository.TryGetService(productId);
+                var item = _productRepository.TryGetService(serviceId);
                 _cartRepository.Add(item, Constants.UserId);
                 return RedirectToAction("Index");
             }
@@ -31,12 +29,12 @@ namespace Diamond_Cleaning.Controllers
             }
         }
 
-        public IActionResult Delete(Guid productId)
+        public IActionResult Delete(Guid serviceId)
         {
             try
             {
-                var item = _productRepository.TryGetService(productId);
-                //_cartRepository.Delete(item, Constants.UserId);
+                var item = _productRepository.TryGetService(serviceId);
+                _cartRepository.Delete(item, Constants.UserId);
                 return RedirectToAction("Index");
             }
             catch (Exception)

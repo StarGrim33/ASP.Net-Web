@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "Diamond-Cleaning/1.0.0": {
         "dependencies": {
+          "EFCodeFirst.CreateTablesOnly": "1.0.2",
           "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": "8.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
@@ -59,6 +60,26 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.7.0.0",
             "fileVersion": "1.700.22.46903"
+          }
+        }
+      },
+      "EFCodeFirst.CreateTablesOnly/1.0.2": {
+        "dependencies": {
+          "EntityFramework": "4.1.10311",
+          "WebActivator": "1.4.0"
+        },
+        "runtime": {
+          "lib/Devtalk.EF.CodeFirst.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "EntityFramework/4.1.10311": {
+        "runtime": {
+          "lib/EntityFramework.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.10311.0"
           }
         }
       },
@@ -2091,8 +2112,17 @@
           }
         }
       },
+      "WebActivator/1.4.0": {
+        "runtime": {
+          "lib/NETFramework40/WebActivator.dll": {
+            "assemblyVersion": "1.4.0.0",
+            "fileVersion": "1.4.0.0"
+          }
+        }
+      },
       "OnlineShop.Db/1.0.0": {
         "dependencies": {
+          "EFCodeFirst.CreateTablesOnly": "1.0.2",
           "Microsoft.EntityFrameworkCore": "8.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "8.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0"
@@ -2122,6 +2152,20 @@
       "sha512": "sha512-eHEiCO/8+MfNc9nH5dVew/+FvxdaGrkRL4OMNwIz0W79+wtJyEoeRlXJ3SrXhoy9XR58geBYKmzMR83VO7bcAw==",
       "path": "azure.identity/1.7.0",
       "hashPath": "azure.identity.1.7.0.nupkg.sha512"
+    },
+    "EFCodeFirst.CreateTablesOnly/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3rQMKpQolvWd5Fm+ppnHGZufJXZPd4xQ3zXBJyeEGtsEs+T/NQb1Lo48uERE90lsxTP9Sr7ZvDrYu7TUqm+gfg==",
+      "path": "efcodefirst.createtablesonly/1.0.2",
+      "hashPath": "efcodefirst.createtablesonly.1.0.2.nupkg.sha512"
+    },
+    "EntityFramework/4.1.10311": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4X3UvEVyf2PJdEXbSJXUbMsL20Gw+z/1oK2qpGD3TC91lvCoIUFNcrJ8q9WeaTmA1RmzmxOLtEqvBMLqIWdMJw==",
+      "path": "entityframework/4.1.10311",
+      "hashPath": "entityframework.4.1.10311.nupkg.sha512"
     },
     "Humanizer/2.14.1": {
       "type": "package",
@@ -3382,6 +3426,13 @@
       "sha512": "sha512-bR4qdCmssMMbo9Fatci49An5B1UaVJZHKNq70PRgzoLYIlitb8Tj7ns/Xt5Pz1CkERiTjcVBDU2y1AVrPBYkaw==",
       "path": "system.windows.extensions/7.0.0",
       "hashPath": "system.windows.extensions.7.0.0.nupkg.sha512"
+    },
+    "WebActivator/1.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hwpnBLuS7du/aOn80w0GIre9y8IZW/L0N6Vom6iaONLy6kYsNxMbh6a8f8Ji/1d7oOub6LvJN8z4iHdAWiFr7g==",
+      "path": "webactivator/1.4.0",
+      "hashPath": "webactivator.1.4.0.nupkg.sha512"
     },
     "OnlineShop.Db/1.0.0": {
       "type": "project",

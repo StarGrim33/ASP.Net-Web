@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OnlineShop.Db.Interfaces;
 using OnlineShop.Db.Models;
 
 namespace OnlineShop.Db
@@ -40,7 +41,7 @@ namespace OnlineShop.Db
                         }
                     };
 
-                _databaseContext.Carts.Add(newCart);   
+                _databaseContext.Carts.Add(newCart);
             }
             else
             {
@@ -60,6 +61,8 @@ namespace OnlineShop.Db
                     });
                 }
             }
+
+            _databaseContext.SaveChanges();
         }
 
         public void Delete(Service service, string userId)
@@ -86,7 +89,9 @@ namespace OnlineShop.Db
             ArgumentNullException.ThrowIfNull(userId);
 
             var existingCart = TryGetByUserId(userId);
+
             _databaseContext.Carts.Remove(existingCart);
+            _databaseContext.SaveChanges();
         }
     }
 }
