@@ -1,0 +1,16 @@
+﻿@model List<ServiceViewModel>
+
+<div class="row">
+    @foreach(var service in Model)
+    {
+        <div class="col-3 card shadow">
+        <img class="card-img-top" src="@service.Link" alt="Изображение услуги"/>
+        <div class="card-body">
+        <a style="color:black" asp-area="" asp-controller="Service" asp-action="Index" asp-route-id="@service.Id"></a>
+        <h5>@service.Cost руб</h5>
+        <a class="btn btn-dark" asp-area="" asp-controller="Cart" asp-action="Add" asp-route-serviceId="@service.Id" role="button">Добавить в корзину</a>
+        <a class="btn btn-danger" asp-area="" asp-controller="Favourite" asp-action="Remove" asp-route-serviceId="@service.Id" role="button">Удалить из избранного</a>
+        </div>
+        </div>
+    }
+</div>

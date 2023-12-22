@@ -13,3 +13,18 @@ C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\OnlineShop.Db\obj\
 C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\OnlineShop.Db\obj\Debug\net8.0\ref\OnlineShop.Db.dll
 C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\OnlineShop.Db\bin\Debug\net8.0\OnlineShop.Db.runtimeconfig.json
 C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\OnlineShop.Db\obj\Debug\net8.0\OnlineShop.Db.genruntimeconfig.cache
+C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\OnlineShop.Db\bin\Debug\net8.0\OnlineShop.Db.deps.json
+C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\OnlineShop.Db\bin\Debug\net8.0\OnlineShop.Db.runtimeconfig.json
+C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\OnlineShop.Db\bin\Debug\net8.0\OnlineShop.Db.dll
+C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\OnlineShop.Db\bin\Debug\net8.0\OnlineShop.Db.pdb
+C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\OnlineShop.Db\obj\Debug\net8.0\OnlineShop.Db.csproj.AssemblyReference.cache
+C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\OnlineShop.Db\obj\Debug\net8.0\OnlineShop.Db.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\OnlineShop.Db\obj\Debug\net8.0\OnlineShop.Db.AssemblyInfoInputs.cache
+C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\OnlineShop.Db\obj\Debug\net8.0\OnlineShop.Db.AssemblyInfo.cs
+C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\OnlineShop.Db\obj\Debug\net8.0\OnlineShop.Db.csproj.CoreCompileInputs.cache
+C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\OnlineShop.Db\obj\Debug\net8.0\OnlineShop.Db.sourcelink.json
+C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\OnlineShop.Db\obj\Debug\net8.0\OnlineShop.Db.dll
+C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\OnlineShop.Db\obj\Debug\net8.0\refint\OnlineShop.Db.dll
+C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\OnlineShop.Db\obj\Debug\net8.0\OnlineShop.Db.pdb
+C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\OnlineShop.Db\obj\Debug\net8.0\OnlineShop.Db.genruntimeconfig.cache
+C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\OnlineShop.Db\obj\Debug\net8.0\ref\OnlineShop.Db.dll

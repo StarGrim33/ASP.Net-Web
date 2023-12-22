@@ -14,19 +14,22 @@
     <div class="col-4 card shadow">
            <img src="@service.Link" alt="Изображение услуги" />
             <div class="card-body">
-        <a style="color:black" href="/service/index/@service.Id">
+                <a class="btn btn-success" asp-area="" asp-controller="Service" asp-action="Index" asp-route-serviceId="@service.Id" role="button">Подробнее</a>
             <h5>@service.Name</h5>
-        </a>
         <h5>@service.Cost</h5>
-        <a class="btn btn-dark" href="/cart/add?productId=@service.Id" role="button">Заказать</a>
+                <a class="btn btn-success" asp-area="" asp-controller="Cart" asp-action="Add" asp-route-serviceId="@service.Id" role="button">Заказать</a>
+                <a class="btn btn-success" asp-area="" asp-controller="Favourite" asp-action="Add" asp-route-serviceId="@service.Id" role="button">Добавить в избранное</a>
         </div>
     </div>
 }
 </div>
 
-<div class="timeStyle">
-    Контактная информация
-</div>
+<p>
+    <div class="timeStyle">
+        Контактная информация
+    </div>
+</p>
+
 
 <li class="timeStyle">
     <a href="mailto:elenakuzmicheva77@gmail.com">
@@ -43,23 +46,25 @@
 </li>
 
 <li class="footer-info__contact">
+    <a>
     <span class="headerText">Режим работы</span>
+    </a>
 </li>
 
 <li class="footer-info__contact">
-    <div class="ui-contact align-items-stretch">
-        <span class="timeStyle"></span>
-        <div class="timeStyle">
-            с 10:00 до 22:00 без выходных
-        </div>
-    </div>
+    <a>
+       с 10:00 до 22:00 без выходных
+       </a>
 </li>
 
-<p>
-    <h2 class="timeStyle">@ViewData["CurrentDate"]</h2>
-</p>
-
 <div class="text-center">
-    <h1 class="headerText">Добро пожаловать</h1>
+    <h5 class="headerText">
+        Добро пожаловать! 
+     </h5>
+    <p>
+        <b>
+            @ViewData["CurrentDate"]
+        </b>
+        </p> 
     <p class ="textStyle">Наша группа Вконтакте <a href="https://vk.com/diamondclean1ng">Чистота - залог успеха!</a>.</p>
 </div>

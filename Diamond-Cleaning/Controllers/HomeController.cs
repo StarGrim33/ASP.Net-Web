@@ -2,7 +2,7 @@
 using Diamond_Cleaning.Interfaces;
 using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Mvc;
-using OnlineShop.Db;
+using OnlineShop.Db.Interfaces;
 using System.Diagnostics;
 
 namespace Diamond_Cleaning.Controllers

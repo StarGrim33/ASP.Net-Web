@@ -46,6 +46,28 @@
           }
         }
       },
+      "EFCodeFirst.CreateTablesOnly/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "4.1.10311",
+          "WebActivator": "1.4.0"
+        },
+        "compile": {
+          "lib/Devtalk.EF.CodeFirst.dll": {}
+        },
+        "runtime": {
+          "lib/Devtalk.EF.CodeFirst.dll": {}
+        }
+      },
+      "EntityFramework/4.1.10311": {
+        "type": "package",
+        "compile": {
+          "lib/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/EntityFramework.dll": {}
+        }
+      },
       "Humanizer/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -3159,10 +3181,20 @@
           }
         }
       },
+      "WebActivator/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/NETFramework40/WebActivator.dll": {}
+        },
+        "runtime": {
+          "lib/NETFramework40/WebActivator.dll": {}
+        }
+      },
       "OnlineShop.Db/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "EFCodeFirst.CreateTablesOnly": "1.0.2",
           "Microsoft.EntityFrameworkCore": "8.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "8.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0"
@@ -3213,6 +3245,34 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "EFCodeFirst.CreateTablesOnly/1.0.2": {
+      "sha512": "3rQMKpQolvWd5Fm+ppnHGZufJXZPd4xQ3zXBJyeEGtsEs+T/NQb1Lo48uERE90lsxTP9Sr7ZvDrYu7TUqm+gfg==",
+      "type": "package",
+      "path": "efcodefirst.createtablesonly/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/App_Start/DontDropDbJustCreateTablesIfModelChangedStart.cs.pp",
+        "efcodefirst.createtablesonly.1.0.2.nupkg.sha512",
+        "efcodefirst.createtablesonly.nuspec",
+        "lib/Devtalk.EF.CodeFirst.dll"
+      ]
+    },
+    "EntityFramework/4.1.10311": {
+      "sha512": "4X3UvEVyf2PJdEXbSJXUbMsL20Gw+z/1oK2qpGD3TC91lvCoIUFNcrJ8q9WeaTmA1RmzmxOLtEqvBMLqIWdMJw==",
+      "type": "package",
+      "path": "entityframework/4.1.10311",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "entityframework.4.1.10311.nupkg.sha512",
+        "entityframework.nuspec",
+        "lib/EntityFramework.dll",
+        "lib/EntityFramework.xml",
+        "tools/install.ps1"
       ]
     },
     "Humanizer/2.14.1": {
@@ -8687,6 +8747,18 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "WebActivator/1.4.0": {
+      "sha512": "hwpnBLuS7du/aOn80w0GIre9y8IZW/L0N6Vom6iaONLy6kYsNxMbh6a8f8Ji/1d7oOub6LvJN8z4iHdAWiFr7g==",
+      "type": "package",
+      "path": "webactivator/1.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/NETFramework40/WebActivator.dll",
+        "webactivator.1.4.0.nupkg.sha512",
+        "webactivator.nuspec"
+      ]
+    },
     "OnlineShop.Db/1.0.0": {
       "type": "project",
       "path": "../OnlineShop.Db/OnlineShop.Db.csproj",
@@ -8695,6 +8767,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "EFCodeFirst.CreateTablesOnly >= 1.0.2",
       "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter >= 8.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0",
@@ -8713,23 +8786,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\prosk\\.nuget\\packages\\": {},
+    "C:\\Users\\Влад и Аня\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\prosk\\OneDrive\\Документы\\GitHub\\ASP.Net-Web\\Diamond-Cleaning\\Diamond-Cleaning.csproj",
+      "projectUniqueName": "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\Diamond-Cleaning\\Diamond-Cleaning.csproj",
       "projectName": "Diamond-Cleaning",
-      "projectPath": "C:\\Users\\prosk\\OneDrive\\Документы\\GitHub\\ASP.Net-Web\\Diamond-Cleaning\\Diamond-Cleaning.csproj",
-      "packagesPath": "C:\\Users\\prosk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\prosk\\OneDrive\\Документы\\GitHub\\ASP.Net-Web\\Diamond-Cleaning\\obj\\",
+      "projectPath": "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\Diamond-Cleaning\\Diamond-Cleaning.csproj",
+      "packagesPath": "C:\\Users\\Влад и Аня\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\Diamond-Cleaning\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\prosk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Влад и Аня\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -8744,8 +8817,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\prosk\\OneDrive\\Документы\\GitHub\\ASP.Net-Web\\OnlineShop.Db\\OnlineShop.Db.csproj": {
-              "projectPath": "C:\\Users\\prosk\\OneDrive\\Документы\\GitHub\\ASP.Net-Web\\OnlineShop.Db\\OnlineShop.Db.csproj"
+            "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\OnlineShop.Db\\OnlineShop.Db.csproj": {
+              "projectPath": "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\OnlineShop.Db\\OnlineShop.Db.csproj"
             }
           }
         }
@@ -8760,6 +8833,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "EFCodeFirst.CreateTablesOnly": {
+            "target": "Package",
+            "version": "[1.0.2, )"
+          },
           "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
             "target": "Package",
             "version": "[8.0.0, )"
@@ -8841,5 +8918,37 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"EFCodeFirst.CreateTablesOnly 1.0.2\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net8.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "EFCodeFirst.CreateTablesOnly",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"EntityFramework 4.1.10311\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net8.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "EntityFramework",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"WebActivator 1.4.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net8.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "WebActivator",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
