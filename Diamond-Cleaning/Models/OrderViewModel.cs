@@ -24,6 +24,21 @@ namespace Diamond_Cleaning.Models
                 .GetCustomAttribute<DisplayAttribute>()
                 .GetName();
         }
+
+        public decimal Cost
+        {
+            get
+            {
+                decimal totalCost = 0;
+
+                foreach (var item in Items)
+                {
+                    totalCost += item.Cost;
+                }
+
+                return totalCost;
+            }
+        }
     }
     public enum OrderStatuses
     {

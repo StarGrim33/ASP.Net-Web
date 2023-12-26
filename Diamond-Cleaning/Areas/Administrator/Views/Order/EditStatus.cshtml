@@ -9,11 +9,11 @@
             <table class="table">
                 <tr>
                     <th>Дата заказа:</th>
-                    <td>@Model.Time.Date</td>
+                    <td>@Model.Time.ToString("dd.MM.yy")</td>
                 </tr>
                 <tr>
                     <th>Время заказа:</th>
-                    <td>@Model.Time.TimeOfDay</td>
+                    <td>@Model.Time.ToString("HH:mm")</td>
                 </tr>
                 <tr>
                     <th>Адрес:</th>
@@ -33,7 +33,7 @@
                 </tr>
                 <tr>
                     <th>Сумма заказа:</th>
-                    <td>@string.Format("{0:### ### ###}", Model) р</td>
+                    <td>@string.Format("{0:### ### ###}", Model.Cost) р</td>
                 </tr>
                 <tr>
                     <th>Статус заказа:</th>
@@ -47,7 +47,7 @@
             </table>
             <br />
             <button type="submit" class="btn btn-primary" asp-area="Administrator" asp-controller="Order" asp-action="EditStatus" asp-route-id="@Model.Id">Сохранить</button>
-            <a class="btn btn-outline-primary" asp-area="Administrator" asp-controller="Order" asp-action="Orders">Отмена</a>
+            <a class="btn btn-outline-primary" asp-area="Administrator" asp-controller="Order" asp-action="GetOrders">Отмена</a>
         </div>
     </div>
 </form>

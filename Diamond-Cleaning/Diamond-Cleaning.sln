@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Diamond-Cleaning", "Diamond-Cleaning.csproj", "{A6EE8682-91F1-4CAD-B0FF-4EF04FFD33D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Db", "..\OnlineShop.Db\OnlineShop.Db.csproj", "{B61B1E1D-FB96-4F29-908E-7002496B2CD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineShop.Db", "..\OnlineShop.Db\OnlineShop.Db.csproj", "{B61B1E1D-FB96-4F29-908E-7002496B2CD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

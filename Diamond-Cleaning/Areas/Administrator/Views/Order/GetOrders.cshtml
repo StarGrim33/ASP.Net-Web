@@ -36,12 +36,13 @@
                             {
                                 <tr>
                                     <td> @i </td>
-                                    <td>@string.Format("{0:### ### ###}", order) р</td>
+                                    <td>@string.Format("{0:### ### ###}", order.Cost) р</td>
                                     <td>@OrderViewModel.GetDisplayName(order.Status)</td>
                                     <td>@order.User.Email</td>
-                                    <td>@order.Time</td>
+                                    <td>@order.Time.ToString("dd.MM.yy")</td>
+                                    <td>@order.Time.ToString("HH:mm")</td>
                                     <td class="col-4 text-end">
-                                        <a class="btn btn-outline-warning" asp-area = "Administrator" asp-controller="Order" asp-action="EditStatus" asp-route-id="@order.Id"><i class="bi bi-pencil"> Изменить статус </i></a>
+                                        <a class="btn btn-outline-warning" asp-area="Administrator" asp-controller="Order" asp-action="EditStatus" asp-route-id="@order.Id" asp-route-status="@order.Status"><i class="bi bi-pencil"> Изменить статус </i></a>
                                     </td>
                                 </tr>
                                 i += 1;

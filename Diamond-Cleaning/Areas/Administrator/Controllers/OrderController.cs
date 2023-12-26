@@ -8,7 +8,7 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
     [Area("Administrator")]
     public class OrderController : Controller
     {
-        private IOrdersRepository _ordersRepository;
+        private readonly IOrdersRepository _ordersRepository;
 
         public OrderController(IOrdersRepository ordersRepository)
         {
@@ -18,23 +18,20 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
         public IActionResult GetOrders()
         {
             var orders = _ordersRepository.GetAllOrders();
-            var orderViewModels = Mapping.ToOrderViewModels(orders); // Преобразуем список заказов в соответствующие модели представления
-            return View(orderViewModels); // Передаем преобразованный список моделей представления в представление
+            return View(orders.Select(x => Mapping.ToOrderViewModel(x)).ToList());
         }
 
         public IActionResult EditStatus(Guid id)
         {
             var orders = _ordersRepository.GetAllOrders();
             var currentOrder = orders.FirstOrDefault(order => order.Id == id);
-            return View(currentOrder);
+            return View(Mapping.ToOrderViewModel(currentOrder));
         }
 
         [HttpPost]
         public IActionResult EditStatus(Guid Id, OrderStatuses Status)
         {
-            var orders = _ordersRepository.GetAllOrders();
-            Order? currentOrder = orders.FirstOrDefault(order => order.Id == Id);
-            currentOrder.Status = Status;
+            _ordersRepository.UpdateStatus(Id, Status);
             return RedirectToAction("GetOrders");
         }
     }
