@@ -26,7 +26,7 @@ namespace Diamond_Cleaning
             builder.Services.AddTransient<ICompareServices, CompareDbRepository>();
             builder.Services.AddTransient<IFavouriteRepository, FavouriteDbRepository>();
             builder.Services.AddTransient<ICartsRepository, CartsDbRepository>();
-            builder.Services.AddSingleton<IOrdersRepository, OrdersInMemoryRepository>();
+            builder.Services.AddTransient<IOrdersRepository, OrdersDbRepository>();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();

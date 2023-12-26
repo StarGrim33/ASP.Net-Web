@@ -19,5 +19,7 @@ namespace OnlineShop.Db
         public DbSet<CompareServices> CompareServices { get; set; }
 
         public DbSet<FavouriteServices> FavouriteServices { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
     }
 }

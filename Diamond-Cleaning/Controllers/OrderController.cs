@@ -3,6 +3,7 @@ using Diamond_Cleaning.Interfaces;
 using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Db.Interfaces;
+using OnlineShop.Db.Models;
 
 namespace Diamond_Cleaning.Controllers
 {
@@ -19,12 +20,11 @@ namespace Diamond_Cleaning.Controllers
 
         public IActionResult Index()
         {
-            var cart = _cartsRepository.TryGetByUserId(Constants.UserId);
             return View();
         }
 
         [HttpPost]
-        public IActionResult Buy(UserOrderInfo user)
+        public IActionResult Buy(UserOrderInfoViewModel user)
         {
             if (!user.Name.All(c => char.IsLetter(c) || c == ' '))
             {
@@ -41,15 +41,16 @@ namespace Diamond_Cleaning.Controllers
 
             var existingCart = _cartsRepository.TryGetByUserId(Constants.UserId);
             var existingCartViewModel = Mapping.ToCartViewModel(existingCart);
+
             var order = new Order
             {
-                User = user,
-                Items = existingCartViewModel.Items
+                User = Mapping.ToUser(user),
+                Items = existingCart.Items
             };
 
             _ordersRepository.Add(order);
             _cartsRepository.Clear(Constants.UserId);
-            return View("Success", order);
+            return View("Success", Mapping.ToOrderViewModel(order));
         }
     }
 }

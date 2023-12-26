@@ -541,3 +541,6 @@ C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\Diamond-Cleani
 C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Devtalk.EF.CodeFirst.dll
 C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\EntityFramework.dll
 C:\Users\Влад и Аня\Desktop\C# course\ASP.Net\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\WebActivator.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\Devtalk.EF.CodeFirst.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\EntityFramework.dll
+C:\Users\prosk\OneDrive\Документы\GitHub\ASP.Net-Web\Diamond-Cleaning\bin\Debug\net8.0\WebActivator.dll

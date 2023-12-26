@@ -1,4 +1,4 @@
-﻿@model Order;
+﻿@model OrderViewModel;
 <form method="post">
     <div class="row">
         @await Html.PartialAsync("MenuAdministrator")
@@ -9,11 +9,11 @@
             <table class="table">
                 <tr>
                     <th>Дата заказа:</th>
-                    <td>@Model.Date</td>
+                    <td>@Model.Time.Date</td>
                 </tr>
                 <tr>
                     <th>Время заказа:</th>
-                    <td>@Model.Time</td>
+                    <td>@Model.Time.TimeOfDay</td>
                 </tr>
                 <tr>
                     <th>Адрес:</th>
@@ -33,13 +33,13 @@
                 </tr>
                 <tr>
                     <th>Сумма заказа:</th>
-                    <td>@string.Format("{0:### ### ###}", Model.Amount) р</td>
+                    <td>@string.Format("{0:### ### ###}", Model) р</td>
                 </tr>
                 <tr>
                     <th>Статус заказа:</th>
-                    <td>@OrderStatusDisplay.GetDisplayName(Model.Status)</td>
+                    <td>@OrderViewModel.GetDisplayName(Model.Status)</td>
                         <select asp-for="@Model.Status"
-                                asp-items="@Html.GetEnumSelectList<OrderStatuses>()"
+                             asp-items="@Html.GetEnumSelectList<OrderStatuses>()"
                                 class="form-control-sm">
                         </select>
                     </td>

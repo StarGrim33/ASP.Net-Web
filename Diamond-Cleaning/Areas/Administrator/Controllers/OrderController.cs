@@ -1,6 +1,7 @@
-﻿using Diamond_Cleaning.Interfaces;
-using Diamond_Cleaning.Models;
+﻿using Diamond_Cleaning.Helpers;
 using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Db.Interfaces;
+using OnlineShop.Db.Models;
 
 namespace Diamond_Cleaning.Areas.Administator.Controllers
 {
@@ -17,7 +18,8 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
         public IActionResult GetOrders()
         {
             var orders = _ordersRepository.GetAllOrders();
-            return View(orders);
+            var orderViewModels = Mapping.ToOrderViewModels(orders); // Преобразуем список заказов в соответствующие модели представления
+            return View(orderViewModels); // Передаем преобразованный список моделей представления в представление
         }
 
         public IActionResult EditStatus(Guid id)

@@ -60,5 +60,68 @@ namespace Diamond_Cleaning.Helpers
 
             return cartItems;
         }
+
+        public static UserOrderInfoViewModel ToUserOrderInfoViewModel(UserOrderInfo userOrderInfo)
+        {
+            if (userOrderInfo == null)
+                return null;
+
+            return new UserOrderInfoViewModel()
+            {
+                Id = userOrderInfo.Id,
+                Name = userOrderInfo.Name,
+                Address = userOrderInfo.Address,
+                Email = userOrderInfo.Email,
+                Phone = userOrderInfo.Phone
+            };
+        }
+
+        public static List<OrderViewModel> ToOrderViewModels(List<Order> orders)
+        {
+            var ordersView = new List<OrderViewModel>();
+
+            foreach (var order in orders)
+            {
+                var ord = new OrderViewModel
+                {
+                    Id = order.Id,
+                    Items = ToCartItemViewModels(order.Items),
+                    Status = (Models.OrderStatuses)(int)order.Status,
+                    Time = order.Time,
+                    User = ToUserOrderInfoViewModel(order.User)
+                };
+
+                ordersView.Add(ord);
+            }
+
+            return ordersView;
+        }
+
+        public static OrderViewModel ToOrderViewModel(Order order)
+        {
+            if (order == null)
+                return null;
+
+            return new OrderViewModel()
+            {
+                Id = order.Id,
+                Status = (Models.OrderStatuses)(int)order.Status,
+                Items = ToCartItemViewModels(order.Items),
+                Time = order.Time,
+                User = ToUserOrderInfoViewModel(order.User),
+            };
+        }
+
+        public static UserOrderInfo ToUser(UserOrderInfoViewModel user)
+        {
+            return new UserOrderInfo
+            {
+                Id = user.Id,
+                Name = user.Name,
+                Address = user.Address,
+                Phone = user.Phone,
+                Email = user.Email,
+            };
+        }
     }
 }

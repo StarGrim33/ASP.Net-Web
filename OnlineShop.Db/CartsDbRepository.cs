@@ -37,7 +37,7 @@ namespace OnlineShop.Db
                         {
                             Amount = 1,
                             Service = service,
-                            Cart = newCart
+                            //Cart = newCart
                         }
                     };
 
@@ -57,7 +57,7 @@ namespace OnlineShop.Db
                     {
                         Amount = 1,
                         Service = service,
-                        Cart = existingCart
+                        //Cart = existingCart
                     });
                 }
             }

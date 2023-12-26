@@ -1,7 +1,7 @@
 ﻿@{
     int i = 1;
 }
-@model List<Order>;
+@model List<OrderViewModel>;
 
 <div class="row">
     @await Html.PartialAsync("MenuAdministrator")
@@ -36,10 +36,9 @@
                             {
                                 <tr>
                                     <td> @i </td>
-                                    <td>@string.Format("{0:### ### ###}", order.Amount) р</td>
-                                    <td>@OrderStatusDisplay.GetDisplayName(order.Status)</td>
+                                    <td>@string.Format("{0:### ### ###}", order) р</td>
+                                    <td>@OrderViewModel.GetDisplayName(order.Status)</td>
                                     <td>@order.User.Email</td>
-                                    <td>@order.Date</td>
                                     <td>@order.Time</td>
                                     <td class="col-4 text-end">
                                         <a class="btn btn-outline-warning" asp-area = "Administrator" asp-controller="Order" asp-action="EditStatus" asp-route-id="@order.Id"><i class="bi bi-pencil"> Изменить статус </i></a>
