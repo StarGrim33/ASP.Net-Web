@@ -1,5 +1,6 @@
 using Diamond_Cleaning.Interfaces;
 using Diamond_Cleaning.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using OnlineShop.Db;
 using OnlineShop.Db.Interfaces;
@@ -20,6 +21,8 @@ namespace Diamond_Cleaning
 
             // Add services to the container.
             builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connection));
+            builder.Services.AddDbContext<IdentityContext>(options => options.UseSqlServer(connection));
+            builder.Services.AddIdentity<OnlineShop.Db.Models.User, IdentityRole>().AddEntityFrameworkStores<IdentityContext>();
             builder.Services.AddSingleton<IRolesRepository, InMemoryRolesRepository>();
             builder.Services.AddSingleton<IUsersRepository, UsersInMemoryRepository>();
             builder.Services.AddTransient<IServicesRepository, ServiceDbRepository>();
@@ -44,9 +47,10 @@ namespace Diamond_Cleaning
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseSerilogRequestLogging();
-
+            
             app.MapControllerRoute(
                 name: "MyArea",
                 pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
