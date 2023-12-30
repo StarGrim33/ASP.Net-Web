@@ -4265,23 +4265,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Влад и Аня\\.nuget\\packages\\": {},
+    "C:\\Users\\prosk\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\OnlineShop.Db\\OnlineShop.Db.csproj",
+      "projectUniqueName": "C:\\Users\\prosk\\OneDrive\\Документы\\GitHub\\ASP.Net-Web\\OnlineShop.Db\\OnlineShop.Db.csproj",
       "projectName": "OnlineShop.Db",
-      "projectPath": "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\OnlineShop.Db\\OnlineShop.Db.csproj",
-      "packagesPath": "C:\\Users\\Влад и Аня\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Влад и Аня\\Desktop\\C# course\\ASP.Net\\ASP.Net-Web\\OnlineShop.Db\\obj\\",
+      "projectPath": "C:\\Users\\prosk\\OneDrive\\Документы\\GitHub\\ASP.Net-Web\\OnlineShop.Db\\OnlineShop.Db.csproj",
+      "packagesPath": "C:\\Users\\prosk\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\prosk\\OneDrive\\Документы\\GitHub\\ASP.Net-Web\\OnlineShop.Db\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Влад и Аня\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\prosk\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
