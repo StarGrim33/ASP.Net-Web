@@ -3,13 +3,13 @@ using System.Data;
 
 namespace Diamond_Cleaning.Models
 {
-    public class User
+    public class UserViewModel
     {
-        public User()
+        public UserViewModel()
         {
         }
 
-        public User(string name, string password, string firstName, string lastName, string phone)
+        public UserViewModel(string name, string password, string firstName, string lastName, string phone)
         {
             Guid = Guid.NewGuid();
             Role = new Roles("User");
@@ -25,10 +25,6 @@ namespace Diamond_Cleaning.Models
         [Required(ErrorMessage = "Не указано имя")]
         [StringLength(25, MinimumLength = 2, ErrorMessage = "Длина должна быть от 2 до 25 символов")]
         public string? Name { get; set; }
-
-        //[Required(ErrorMessage = "Не указана электронная почта")]
-        //[EmailAddress(ErrorMessage="Нужно ввести валидный адрес электронной почты")]
-        //public string Login { get; set; }
 
         [Required(ErrorMessage = "Не указан пароль")]
         public string Password { get; set; }

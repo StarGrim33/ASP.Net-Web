@@ -155,26 +155,26 @@ namespace OnlineShop.Db.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2d6649b6-9390-4436-a89e-a53a2897e23f"),
+                            Id = new Guid("66119057-a9e9-406e-b576-51513a0fb783"),
                             Cost = 4000m,
                             Description = "Поддерживающая уборка вашей квартиры или дома, цена зависит от площади",
-                            Link = "/image1.jpg",
+                            Link = "/image/image1.jpg",
                             Name = "Поддерживающая уборка"
                         },
                         new
                         {
-                            Id = new Guid("a0cd0ba0-57c2-46fd-b384-a4b84160cb1b"),
+                            Id = new Guid("99d6eec7-f843-4ceb-80db-515852a4ce54"),
                             Cost = 5000m,
                             Description = "Стандартная уборка вашей квартиры или дома, цена зависит от площади",
-                            Link = "/image2.jpg",
+                            Link = "/image/image2.jpg",
                             Name = "Стандартная уборка"
                         },
                         new
                         {
-                            Id = new Guid("68443b04-cceb-4f41-84f1-5c518bff503e"),
+                            Id = new Guid("0e53d752-8ea0-423e-b12f-322112afa32c"),
                             Cost = 10000m,
                             Description = "Генеральная уборка вашей квартиры или дома, цена зависит от площади",
-                            Link = "/image3.jpg",
+                            Link = "/image/image3.jpeg",
                             Name = "Генеральная уборка"
                         });
                 });

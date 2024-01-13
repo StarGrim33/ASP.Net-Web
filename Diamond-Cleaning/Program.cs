@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using OnlineShop.Db;
 using OnlineShop.Db.Interfaces;
+using OnlineShop.Db.Models;
 using Serilog;
 
 namespace Diamond_Cleaning
@@ -22,7 +23,19 @@ namespace Diamond_Cleaning
             // Add services to the container.
             builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connection));
             builder.Services.AddDbContext<IdentityContext>(options => options.UseSqlServer(connection));
-            builder.Services.AddIdentity<OnlineShop.Db.Models.User, IdentityRole>().AddEntityFrameworkStores<IdentityContext>();
+
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.ExpireTimeSpan = TimeSpan.FromHours(8);
+                options.LoginPath = "/Authorization/Login";
+                options.LogoutPath = "/Authorization/Logout";
+                options.Cookie = new CookieBuilder
+                {
+                    IsEssential = true
+                };
+            });
+
+            builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<IdentityContext>();
             builder.Services.AddSingleton<IRolesRepository, InMemoryRolesRepository>();
             builder.Services.AddSingleton<IUsersRepository, UsersInMemoryRepository>();
             builder.Services.AddTransient<IServicesRepository, ServiceDbRepository>();
@@ -34,11 +47,9 @@ namespace Diamond_Cleaning
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -49,6 +60,15 @@ namespace Diamond_Cleaning
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            using (var serviceScope = app.Services.CreateScope())
+            {
+                var services = serviceScope.ServiceProvider;
+                var userManager = services.GetRequiredService<UserManager<User>>();
+                var rolesManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+                IdentityInitializer.Initialize(userManager, rolesManager);
+            }
+
             app.UseSerilogRequestLogging();
             
             app.MapControllerRoute(

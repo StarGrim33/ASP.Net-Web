@@ -4,15 +4,15 @@ namespace Diamond_Cleaning.Interfaces
 {
     public interface IUsersRepository
     {
-        List<User> GetAll();
+        List<UserViewModel> GetAll();
 
-        User TryGetById(Guid userId);
+        UserViewModel TryGetById(Guid userId);
 
-        User TryGetByName(string name);
+        UserViewModel TryGetByName(string name);
 
         void Delete(Guid userId);
 
-        void Add(User user);
+        void Add(UserViewModel user);
 
         void Edit(EditUser user, Guid userId);
 

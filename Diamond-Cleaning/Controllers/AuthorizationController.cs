@@ -2,6 +2,7 @@
 using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Db.Models;
 
 namespace Diamond_Cleaning.Controllers
 {
@@ -18,17 +19,17 @@ namespace Diamond_Cleaning.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult Index()
+        public IActionResult Login(string returnUrl)
         {
-            return View();
+            return View(new Login() { ReturnUrl = returnUrl ?? "/Home" });
         }
 
         [HttpPost]
-        public IActionResult Login(Login user)
+        public IActionResult Login(Login login)
         {
             if (ModelState.IsValid)
             {
-                var result = _signInManager.PasswordSignInAsync(user.Name, user.Password, user.RememberMe, false).Result;
+                var result = _signInManager.PasswordSignInAsync(login.Name, login.Password, login.RememberMe, false).Result;
 
                 if (result.Succeeded)
                 {
@@ -40,58 +41,43 @@ namespace Diamond_Cleaning.Controllers
                 }
             }
 
-            return View(user);
-            //if(string.IsNullOrEmpty(user.Name))
-            //{
-            //    ModelState.AddModelError("", "Введите данные");
-            //    return View("Index", user);
-            //}
-
-            //var userAccount = _usersRepository.TryGetByName(user.Name);
-
-            //if (userAccount == null)
-            //{
-            //    ModelState.AddModelError("", "Пользователь с таким именем не найден. Проверьте имя или зарегистрируйтесь.");
-            //    return View("Index", user);
-            //}
-            //if (userAccount.Password != user.Password)
-            //{
-            //    ModelState.AddModelError("", "Не верный пароль");
-            //    return View("Index", user);
-            //}
-            //if (!ModelState.IsValid)
-            //{
-            //    return View("Index", user);
-            //}
+            return View(login);
         }
 
-        public IActionResult Register()
+        public IActionResult Register(string returnUrl)
         {
-            return View();
+            return View(new Register() { ReturnUrl = returnUrl ?? "/Home" });
         }
 
         [HttpPost]
         public IActionResult Register(Register register)
         {
-            var userAccount = _usersRepository.TryGetByName(register.UserName);
-
-            if (userAccount != null)
-            {
-                ModelState.AddModelError("", "Пользователь с таким именем уже есть.");
-                return View(register);
-            }
             if (register.UserName == register.Password)
             {
                 ModelState.AddModelError("", "Имя пользователя и пароль не должны совпадать");
-                return View(register);
-            }
-            if (!ModelState.IsValid)
-            {
-                return View(register);
             }
 
-            _usersRepository.Add(new User(register.UserName, register.Password, register.FirstName, register.LastName, register.Phone));
-            return RedirectToAction(nameof(HomeController.Index), "Home");
+            if (ModelState.IsValid)
+            {
+                User user = new User { Email = register.UserName, UserName = register.UserName, PhoneNumber = register.Phone };
+                var result = _userManager.CreateAsync(user, register.Password).Result;
+
+                if (result.Succeeded)
+                {
+                    _signInManager.SignInAsync(user, false).Wait();
+                    _userManager.AddToRoleAsync(user, "User").Wait();
+                    return Redirect(register.ReturnUrl ?? "/Home");
+                }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                }
+            }
+
+            return View(register);
         }
     }
 }

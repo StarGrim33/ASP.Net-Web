@@ -47,7 +47,7 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
                 return View(register);
             }
 
-            _usersRepository.Add(new User(register.UserName, register.Password, register.FirstName, register.LastName, register.Phone));
+            _usersRepository.Add(new UserViewModel(register.UserName, register.Password, register.FirstName, register.LastName, register.Phone));
             return RedirectToAction("GetUsers");
         }
 

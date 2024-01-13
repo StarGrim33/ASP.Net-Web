@@ -4,23 +4,23 @@ namespace Diamond_Cleaning.Models
 {
     public class UsersInMemoryRepository : IUsersRepository
     {
-        private List<User> _users;
+        private List<UserViewModel> _users;
 
         public UsersInMemoryRepository()
         {
             _users =
             [
-                new User("kirill@kirill.ru", "12345678", "Кирилл", "Фисенко", "+79265846357"),
-                new User("andrey@andrey.ru", "12345678", "Андрей", "Петров", "+79164875124")
+                new UserViewModel("kirill@kirill.ru", "12345678", "Кирилл", "Фисенко", "+79265846357"),
+                new UserViewModel("andrey@andrey.ru", "12345678", "Андрей", "Петров", "+79164875124")
             ];
         }
 
-        public List<User> GetAll()
+        public List<UserViewModel> GetAll()
         {
             return _users;
         }
 
-        public User TryGetById(Guid user)
+        public UserViewModel TryGetById(Guid user)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace Diamond_Cleaning.Models
             }
         }
 
-        public User TryGetByName(string name)
+        public UserViewModel TryGetByName(string name)
         {
             return _users.FirstOrDefault(user => user.Name == name);
         }
@@ -43,7 +43,7 @@ namespace Diamond_Cleaning.Models
             _users.Remove(user);
         }
 
-        public void Add(User user)
+        public void Add(UserViewModel user)
         {
             _users.Add(user);
         }

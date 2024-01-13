@@ -32,7 +32,7 @@ namespace OnlineShop.Db
                     Id = Guid.NewGuid(),
                     Cost = 4000,
                     Description = "Поддерживающая уборка вашей квартиры или дома, цена зависит от площади",
-                    Link = "/images/image1.jpg",
+                    Link = "/image/image1.jpg",
                     Name = "Поддерживающая уборка"
                 },
                  new Service()
@@ -41,7 +41,7 @@ namespace OnlineShop.Db
                     Id = Guid.NewGuid(),
                     Cost = 5000,
                     Description = "Стандартная уборка вашей квартиры или дома, цена зависит от площади",
-                    Link = "/images/image2.jpg",
+                    Link = "/image/image2.jpg",
                     Name = "Стандартная уборка"
                 },
                   new Service()
@@ -50,7 +50,7 @@ namespace OnlineShop.Db
                     Id = Guid.NewGuid(),
                     Cost = 10000,
                     Description = "Генеральная уборка вашей квартиры или дома, цена зависит от площади",
-                    Link = "/images/image3.jpg",
+                    Link = "/image/image3.jpeg",
                     Name = "Генеральная уборка"
                 },
             }) ;
