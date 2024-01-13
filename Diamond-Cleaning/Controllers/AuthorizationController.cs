@@ -33,7 +33,7 @@ namespace Diamond_Cleaning.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction(nameof(HomeController.Index), "Home");
+                    return Redirect(login.ReturnUrl);
                 }
                 else
                 {
@@ -78,6 +78,12 @@ namespace Diamond_Cleaning.Controllers
             }
 
             return View(register);
+        }
+
+        public IActionResult Logout()
+        {
+            _signInManager.SignOutAsync().Wait();
+            return Redirect("/Home");
         }
     }
 }

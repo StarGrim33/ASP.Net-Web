@@ -1,9 +1,11 @@
 ﻿using Diamond_Cleaning.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Db.Interfaces;
 
 namespace Diamond_Cleaning.Controllers
 {
+    [Authorize]
     public class CartController : Controller
     {
         private readonly IServicesRepository _productRepository;

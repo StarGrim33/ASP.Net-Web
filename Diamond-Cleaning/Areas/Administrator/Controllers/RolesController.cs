@@ -1,10 +1,12 @@
 ﻿using Diamond_Cleaning.Interfaces;
 using Diamond_Cleaning.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Diamond_Cleaning.Areas.Administator.Controllers
 {
     [Area("Administrator")]
+    [Authorize(Roles = "Admin")]
     public class RolesController : Controller
     {
         private IRolesRepository _rolesRepository;

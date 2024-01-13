@@ -1,10 +1,12 @@
 ﻿using Diamond_Cleaning.Interfaces;
 using Diamond_Cleaning.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Diamond_Cleaning.Areas.Administator.Controllers
 {
     [Area("Administrator")]
+    [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
         private IUsersRepository _usersRepository;
@@ -47,7 +49,7 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
                 return View(register);
             }
 
-            _usersRepository.Add(new UserViewModel(register.UserName, register.Password, register.FirstName, register.LastName, register.Phone));
+            //_usersRepository.Add(new UserViewModel(register.UserName, register.Password, register.FirstName, register.LastName, register.Phone));
             return RedirectToAction("GetUsers");
         }
 

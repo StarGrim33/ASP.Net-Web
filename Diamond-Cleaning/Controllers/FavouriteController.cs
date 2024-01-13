@@ -1,10 +1,11 @@
 ﻿using Diamond_Cleaning.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Db.Interfaces;
-using System.ComponentModel;
 
 namespace Diamond_Cleaning.Controllers
 {
+    [Authorize]
     public class FavouriteController : Controller
     {
         private readonly IFavouriteRepository _favouriteRepository;

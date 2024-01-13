@@ -5,21 +5,6 @@ namespace Diamond_Cleaning.Models
 {
     public class UserViewModel
     {
-        public UserViewModel()
-        {
-        }
-
-        public UserViewModel(string name, string password, string firstName, string lastName, string phone)
-        {
-            Guid = Guid.NewGuid();
-            Role = new Roles("User");
-            Name = name;
-            Password = password;
-            FirstName = firstName;
-            LastName = lastName;
-            Phone = phone;
-        }
-
         public Guid Guid { get; set; }
 
         [Required(ErrorMessage = "Не указано имя")]

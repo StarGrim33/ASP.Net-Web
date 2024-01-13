@@ -8,11 +8,11 @@ namespace Diamond_Cleaning.Models
 
         public UsersInMemoryRepository()
         {
-            _users =
-            [
-                new UserViewModel("kirill@kirill.ru", "12345678", "Кирилл", "Фисенко", "+79265846357"),
-                new UserViewModel("andrey@andrey.ru", "12345678", "Андрей", "Петров", "+79164875124")
-            ];
+            //_users =
+            //[
+            //    new UserViewModel("kirill@kirill.ru", "12345678", "Кирилл", "Фисенко", "+79265846357"),
+            //    new UserViewModel("andrey@andrey.ru", "12345678", "Андрей", "Петров", "+79164875124")
+            //];
         }
 
         public List<UserViewModel> GetAll()
