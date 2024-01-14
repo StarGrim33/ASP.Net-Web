@@ -4,21 +4,26 @@ namespace Diamond_Cleaning.Areas.Administrator.Models
 {
     public class EditUser
     {
-        [Required(ErrorMessage = "Не указано имя пользователя")]
-        [StringLength(200, MinimumLength = 2, ErrorMessage = "Имя пользователя должно содержать от 2 до 200 символов")]
+        [Required(ErrorMessage = "Не указана электронная почта")]
+        [StringLength(200, MinimumLength = 2, ErrorMessage = "Почта должна содержать от 2 до 200 символов")]
         [EmailAddress(ErrorMessage = "Введите корректный Email")]
+        public string? Email { get; set; }
+
+        [Required(ErrorMessage = "Не указан логин")]
+        [StringLength(200, MinimumLength = 2, ErrorMessage = "Логин должен содержать от 2 до 200 символов")]
+        [EmailAddress(ErrorMessage = "Введите корректный логин")]
         public string? UserName { get; set; }
-
-        [Required(ErrorMessage = "Не указано имя пользователя")]
-        [StringLength(200, MinimumLength = 1, ErrorMessage = "Имя пользователя должно содержать от 1 до 200 символов")]
-        public string FirstName { get; set; }
-
-        [Required(ErrorMessage = "Не указано фамилия пользователя")]
-        [StringLength(200, MinimumLength = 1, ErrorMessage = "Фамилия пользователя должно содержать от 1 до 200 символов")]
-        public string LastName { get; set; }
 
         [Required(ErrorMessage = "Не указан телефон пользователя")]
         [StringLength(50, MinimumLength = 5, ErrorMessage = "Телефон пользователя должно содержать от 5 до 50 символов")]
         public string Phone { get; set; }
+
+        [Required(ErrorMessage = "Не указан пароль")]
+        [StringLength(200, MinimumLength = 8, ErrorMessage = "Пароль должен содержать от 8 до 200 символов")]
+        public string? Password { get; set; }
+
+        [Required(ErrorMessage = "Не указан повторный пароль")]
+        [Compare("Password", ErrorMessage = "Пароли не совпадают")]
+        public string? ConfirmPassword { get; set; }
     }
 }

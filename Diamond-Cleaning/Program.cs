@@ -37,7 +37,6 @@ namespace Diamond_Cleaning
 
             builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<IdentityContext>();
             builder.Services.AddSingleton<IRolesRepository, InMemoryRolesRepository>();
-            builder.Services.AddSingleton<IUsersRepository, UsersInMemoryRepository>();
             builder.Services.AddTransient<IServicesRepository, ServiceDbRepository>();
             builder.Services.AddTransient<ICompareServices, CompareDbRepository>();
             builder.Services.AddTransient<IFavouriteRepository, FavouriteDbRepository>();

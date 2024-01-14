@@ -1,5 +1,4 @@
-﻿using Diamond_Cleaning.Interfaces;
-using Diamond_Cleaning.Models;
+﻿using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Db.Models;
@@ -8,13 +7,11 @@ namespace Diamond_Cleaning.Controllers
 {
     public class AuthorizationController : Controller
     {
-        private IUsersRepository _usersRepository;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
 
-        public AuthorizationController(IUsersRepository usersRepository, SignInManager<User> signInManager, UserManager<User> userManager)
+        public AuthorizationController(SignInManager<User> signInManager, UserManager<User> userManager)
         {
-            _usersRepository = usersRepository;
             _signInManager = signInManager;
             _userManager = userManager;
         }
@@ -80,9 +77,9 @@ namespace Diamond_Cleaning.Controllers
             return View(register);
         }
 
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            _signInManager.SignOutAsync().Wait();
+            await _signInManager.SignOutAsync();
             return Redirect("/Home");
         }
     }

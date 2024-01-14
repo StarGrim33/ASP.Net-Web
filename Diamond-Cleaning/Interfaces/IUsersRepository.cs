@@ -14,7 +14,7 @@ namespace Diamond_Cleaning.Interfaces
 
         void Add(UserViewModel user);
 
-        void Edit(EditUser user, Guid userId);
+        void Edit(EditUserViewModel user, Guid userId);
 
         void ChangePassword(Guid userId, string password);
 

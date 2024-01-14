@@ -31,6 +31,6 @@
             </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary" asp-controller="Authorization" asp-action="Login">Войти</button>
+    <button type="submit" class="btn btn-primary" asp-controller="Authorization" asp-action="Login" asp-route-ReturnUrl="@Model.ReturnUrl">Войти</button>
     <button type="submit" class="btn btn-outline-primary" asp-controller="Authorization" asp-action="Register">Зарегистрироваться</button>
 </form>
