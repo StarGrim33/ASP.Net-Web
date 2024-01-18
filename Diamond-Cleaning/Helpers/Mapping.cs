@@ -144,6 +144,7 @@ namespace Diamond_Cleaning.Helpers
             return usersViewModel;
         }
 
+
         public static UserViewModel ToUserViewModel(User user)
         {
             return new UserViewModel
@@ -151,6 +152,17 @@ namespace Diamond_Cleaning.Helpers
                 Id = user.Id,
                 Name = user.UserName,
                 Phone = user.PhoneNumber,
+            };
+        }
+
+        public static UserViewModel ToUserViewModelWithRole(User user, List<string> roles)
+        {
+            return new UserViewModel
+            {
+                Id = user.Id,
+                Name = user.UserName,
+                Phone = user.PhoneNumber,
+                Roles = roles,
             };
         }
 

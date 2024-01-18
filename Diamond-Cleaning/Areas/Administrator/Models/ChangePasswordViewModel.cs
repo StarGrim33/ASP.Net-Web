@@ -4,9 +4,6 @@ namespace Diamond_Cleaning.Areas.Administrator.Models
 {
     public class ChangePasswordViewModel
     {
-        [Required(ErrorMessage = "Не указан логин")]
-        [StringLength(200, MinimumLength = 2, ErrorMessage = "Логин должен содержать от 2 до 200 символов")]
-        [EmailAddress(ErrorMessage = "Введите корректный логин")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "Не указан пароль")]

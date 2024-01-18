@@ -23,8 +23,8 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
         }
 
         public async Task<IActionResult> GetUsers()
-        {
-            var users = await _userManager.Users.ToListAsync();
+		{
+			var users = await _userManager.Users.ToListAsync();
             var usersViewModel = Mapping.ToUsersViewModel(users);
             return View(usersViewModel);
         }
@@ -74,7 +74,8 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
         public async Task<IActionResult> Details(string name)
         {
             var user = await _userManager.FindByNameAsync(name);
-            return View(Mapping.ToUserViewModel(user));
+            var userRoles = await _userManager.GetRolesAsync(user);
+            return View(Mapping.ToUserViewModelWithRole(user, userRoles.ToList()));
         }
 
         public async Task<IActionResult> Edit(string name)
@@ -83,7 +84,7 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
             return View(Mapping.ToEditUserViewModel(user));
         }
 
-        [HttpPost]
+        [HttpPut]
         public async Task<IActionResult> Edit(EditUserViewModel editUserViewModel, string name)
         {
             if (ModelState.IsValid)
@@ -131,40 +132,41 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
                 return RedirectToAction(nameof(GetUsers));
             }
 
-            return RedirectToAction(nameof(ChangePassword));
+            return RedirectToAction(nameof(GetUsers));
         }
 
-        //public IActionResult ChangeAccess(string name)
-        //{
-        //    var user = _userManager.FindByNameAsync(name).Result;
-        //    var userRoles = _userManager.GetRolesAsync(user).Result;
-        //    var roles = _roleManager.Roles.ToList();
-        //    var model = new ChangeRoleViewModel
-        //    {
-        //        Name = user.UserName,
-        //        UserRoles = userRoles.Select(x => new RoleViewModel { Name = x }).ToList(),
-        //        AllRoles = roles.Select(x => new RoleViewModel { Name = x.Name }).ToList()
-        //    };
+        public async Task<IActionResult> ChangeAccess(string name)
+        {
+            var user = await _userManager.FindByNameAsync(name);
+            var userRoles = await _userManager.GetRolesAsync(user);
+            var roles = _roleManager.Roles.ToList();
+            var model = new EditRoleViewModel
+            {
+                Name = user.UserName,
+                UserRoles = userRoles.Select(x => new RoleViewModel {Name = x}).ToList(),
+                AllRoles = roles.Select(x => new RoleViewModel { Name = x.Name }).ToList()
+            };
 
-        //    return View(model);
-        //}
+            return View(model);
+        }
 
         [HttpPost]
-        public IActionResult ChangeAccess(string name, Dictionary<string, bool> userRolesViewsModel)
+        public async Task<IActionResult> ChangeAccess(string name, Dictionary<string, bool> userRolesViewsModel)
         {
             if (ModelState.IsValid)
             {
                 var userSelectedRoles = userRolesViewsModel.Select(x => x.Key);
-                var user = _userManager.FindByNameAsync(name).Result;
-                var userRoles = _userManager.GetRolesAsync(user).Result;
-                _userManager.RemoveFromRolesAsync(user, userRoles).Wait();
-                _userManager.AddToRolesAsync(user, userSelectedRoles).Wait();
-                return Redirect($"/Admin/User/Details?name={name}");
+                var user = await _userManager.FindByNameAsync(name);
+                var userRoles = await _userManager.GetRolesAsync(user);
+                await _userManager.RemoveFromRolesAsync(user, userRoles);
+                await _userManager.AddToRolesAsync(user, userSelectedRoles);
+                return Redirect($"/Administrator/User/Details?name={name}");
             }
 
-            return Redirect($"/Admin/User/EditRights?name={name}");
+            return Redirect($"/Administrator/User/ChangeAccess?name={name}");
         }
 
+        [HttpDelete]
         public async Task<IActionResult> Delete(string name)
         {
             var user = _userManager.FindByNameAsync(name).Result;

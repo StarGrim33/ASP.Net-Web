@@ -16,6 +16,16 @@
                     <th>Телефон:</th>
                     <td>@Model.Phone</td>
                 </tr>
+                <tr>
+                    <th>Роль:</th>
+                    <td>
+                        @foreach (var role in Model.Roles)
+                        {
+                            @role
+                            <br />
+                        }
+                    </td>
+                </tr>
             </table>
             <br />
             <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Действия</button>
@@ -36,7 +46,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Удаление пользователя @Model.Name</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Удаление пользователя: @Model.Name</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
             </div>
             <div class="modal-body">
@@ -44,7 +54,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                <a type="button" asp-area="Administrator" class="btn btn-primary" asp-controller="User" asp-action="Delete" asp-route-name="@Model.Name">Удалить</a>
+                <a type="button" class="btn btn-primary" asp-area="Administrator" asp-controller="User" asp-action="Delete" asp-route-name="@Model.Name">Удалить</a>
             </div>
         </div>
     </div>
