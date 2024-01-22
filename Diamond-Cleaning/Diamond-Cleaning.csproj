@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Administrator\Data\**" />
+    <Content Remove="Areas\Administrator\Data\**" />
+    <EmbeddedResource Remove="Areas\Administrator\Data\**" />
+    <None Remove="Areas\Administrator\Data\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EFCodeFirst.CreateTablesOnly" Version="1.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.1" />
@@ -31,10 +38,6 @@
     <PackageReference Include="Serilog.Settings.Configuration" Version="8.0.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="5.0.1" />
     <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Administrator\Data\" />
   </ItemGroup>
 
   <ItemGroup>

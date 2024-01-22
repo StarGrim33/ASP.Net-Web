@@ -1,6 +1,6 @@
-﻿using Diamond_Cleaning.Interfaces;
-using Diamond_Cleaning.Models;
+﻿using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Diamond_Cleaning.Areas.Administator.Controllers
@@ -9,17 +9,17 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
     [Authorize(Roles = "Admin")]
     public class RolesController : Controller
     {
-        private IRolesRepository _rolesRepository;
+        private readonly RoleManager<IdentityRole> _rolesManager;
 
-        public RolesController(IRolesRepository rolesRepository)
+        public RolesController(RoleManager<IdentityRole> rolesRepository)
         {
-            _rolesRepository = rolesRepository;
+            _rolesManager = rolesRepository;
         }
 
         public IActionResult GetRoles()
         {
-            var roles = _rolesRepository.GetAll();
-            return View("Roles", roles);
+            var roles = _rolesManager.Roles.ToList();
+            return View(nameof(Roles), roles);
         }
 
         public IActionResult AddRoles()
@@ -28,9 +28,9 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddRoles(Roles role)
+        public async Task<IActionResult> AddRoles(Roles role)
         {
-            var roles = _rolesRepository.GetAll();
+            var roles = _rolesManager.Roles.ToList();
 
             if (roles.FirstOrDefault(r => r.Name == role.Name) != null)
             {
@@ -41,18 +41,34 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
                 return View(role);
             }
 
-            _rolesRepository.Add(role);
-            return RedirectToAction("GetRoles");
+            var result = await _rolesManager.CreateAsync(new IdentityRole() { Name = role.Name });
+
+            if(result.Succeeded)
+            {
+                return RedirectToAction(nameof(GetRoles));
+            }
+            else
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+            }
+
+            return View(role);
         }
 
         [HttpPost]
-        public IActionResult DelRoles(string Name)
+        public async Task<IActionResult> DelRoles(string Name)
         {
-            var roles = _rolesRepository.GetAll();
-            var currentRole = roles.FirstOrDefault(role => role.Name == Name);
+            var role = await _rolesManager.FindByNameAsync(Name);
 
-            _rolesRepository.Delete(currentRole);
-            return RedirectToAction("GetRoles");
+            if (role != null)
+            {
+                _rolesManager.DeleteAsync(role).Wait();
+            }
+
+            return RedirectToAction(nameof(GetRoles));
         }
     }
 }

@@ -1,7 +1,21 @@
-﻿<div class="row">
+﻿@using Microsoft.AspNetCore.Identity
+@model List<IdentityRole>
+
+<div class="row">
     @await Html.PartialAsync("MenuAdministrator")
 
     <div class="col-9">
         <h3 class="text-center">Роли</h3>
+        <table>
+            <tbody>
+                @foreach (var role in Model)
+                {
+                    <tr>
+                        <td>@role.Name</td>
+                    </tr>
+                }
+            </tbody>
+            <a class="btn btn-outline-warning" asp-area="Administrator" asp-controller="Roles" asp-action="AddRoles">Добавить роль</a>
+        </table>
     </div>
 </div>
