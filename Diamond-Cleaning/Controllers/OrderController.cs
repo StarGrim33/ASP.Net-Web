@@ -1,12 +1,13 @@
 ﻿using Diamond_Cleaning.Helpers;
-using Diamond_Cleaning.Interfaces;
 using Diamond_Cleaning.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Db.Interfaces;
 using OnlineShop.Db.Models;
 
 namespace Diamond_Cleaning.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly ICartsRepository _cartsRepository;

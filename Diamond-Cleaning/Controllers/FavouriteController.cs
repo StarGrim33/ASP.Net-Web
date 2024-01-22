@@ -1,10 +1,11 @@
 ﻿using Diamond_Cleaning.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Db.Interfaces;
-using System.ComponentModel;
 
 namespace Diamond_Cleaning.Controllers
 {
+    [Authorize]
     public class FavouriteController : Controller
     {
         private readonly IFavouriteRepository _favouriteRepository;
@@ -18,7 +19,7 @@ namespace Diamond_Cleaning.Controllers
 
         public IActionResult Index()
         {
-            var services = _favouriteRepository.GetAll(Constants.UserId);
+            var services = _favouriteRepository.GetAll(User.Identity.Name);
             return View(Mapping.ToServiceViewModels(services));
         }
 
@@ -28,16 +29,16 @@ namespace Diamond_Cleaning.Controllers
 
             if (service != null)
             {
-                _favouriteRepository.Add(Constants.UserId, service);
+                _favouriteRepository.Add(User.Identity.Name, service);
                 return RedirectToAction(nameof(Index));
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(nameof(Index), "Home");
         }
 
         public IActionResult Remove(Guid serviceId) 
         { 
-            _favouriteRepository.Remove(Constants.UserId, serviceId); 
+            _favouriteRepository.Remove(User.Identity.Name, serviceId); 
             return RedirectToAction(nameof(Index));
         }
     }

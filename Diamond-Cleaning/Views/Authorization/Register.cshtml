@@ -3,13 +3,14 @@
 <form method="post">
     <h4>Регистрация</h4>
     <div class="text-danger font-weight-bold" asp-validation-summary="All"></div>
+    <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
     <br />
     <div class="row mb-3">
         <label for="login" class="col-sm-1 col-form-label">Логин</label>
         <div class="col-sm-3">
-            <label asp-for="UserName">Электронная почта</label>
-            <input name="UserName" type="email" class="form-control" id="UserName" placeholder="Email">
-            <span asp-validation-for="UserName">Login</span>
+            <label asp-for="Email">Электронная почта</label>
+            <input name="Email" type="email" class="form-control" id="Email" placeholder="Email">
+            <span asp-validation-for="Email">Login</span>
         </div>
     </div>
     <div class="row mb-3">
@@ -31,17 +32,9 @@
     <div class="row mb-3">
         <label for="password" class="col-sm-1 col-form-label">Имя</label>
         <div class="col-sm-3">
-            <label asp-for="FirstName">Ваше имя</label>
-            <input name="FirstName" type="text" class="form-control" id="FirstName" placeholder="*********">
-            <span asp-validation-for="FirstName">FirstName</span>
-        </div>
-    </div>
-    <div class="row mb-3">
-        <label for="password" class="col-sm-1 col-form-label">Фамилия</label>
-        <div class="col-sm-3">
-            <label asp-for="LastName">Ваша фамилия</label>
-            <input name="LastName" type="text" class="form-control" id="LastName" placeholder="*********">
-            <span asp-validation-for="LastName">LastName</span>
+            <label asp-for="UserName">Ваше имя</label>
+            <input name="UserName" type="text" class="form-control" id="UserName" placeholder="*********">
+            <span asp-validation-for="UserName">UserName</span>
         </div>
     </div>
     <div class="row mb-3">
@@ -52,5 +45,5 @@
             <span asp-validation-for="Phone">Phone</span>
         </div>
     </div>
-    <button type="submit" class="btn btn-outline-primary" asp-controller="authorization" asp-action="Register">Зарегистрироваться</button>
+    <button type="submit" class="btn btn-outline-primary" asp-controller="authorization" asp-action="Register" asp-route-ReturnUrl="@Model.ReturnUrl">Зарегистрироваться</button>
 </form>

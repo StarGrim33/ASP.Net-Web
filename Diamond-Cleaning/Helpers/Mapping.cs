@@ -1,5 +1,6 @@
 ﻿using Diamond_Cleaning.Models;
 using OnlineShop.Db.Models;
+using static NuGet.Packaging.PackagingConstants;
 
 namespace Diamond_Cleaning.Helpers
 {
@@ -121,6 +122,57 @@ namespace Diamond_Cleaning.Helpers
                 Address = user.Address,
                 Phone = user.Phone,
                 Email = user.Email,
+            };
+        }
+
+        public static List<UserViewModel> ToUsersViewModel(List<User> users)
+        {
+            var usersViewModel = new List<UserViewModel>();
+
+            foreach (var user in users)
+            {
+                var usr = new UserViewModel
+                {
+                    Id = user.Id,
+                    Name = user.UserName,
+                    Phone = user.PhoneNumber,
+                };
+
+                usersViewModel.Add(usr);
+            }
+
+            return usersViewModel;
+        }
+
+
+        public static UserViewModel ToUserViewModel(User user)
+        {
+            return new UserViewModel
+            {
+                Id = user.Id,
+                Name = user.UserName,
+                Phone = user.PhoneNumber,
+            };
+        }
+
+        public static UserViewModel ToUserViewModelWithRole(User user, List<string> roles)
+        {
+            return new UserViewModel
+            {
+                Id = user.Id,
+                Name = user.UserName,
+                Phone = user.PhoneNumber,
+                Roles = roles,
+            };
+        }
+
+        public static EditUserViewModel ToEditUserViewModel(User user)
+        {
+            return new EditUserViewModel
+            {
+                Name = user.UserName,
+                Phone = user.PhoneNumber,
+                NewPassword = user.PasswordHash,
             };
         }
     }

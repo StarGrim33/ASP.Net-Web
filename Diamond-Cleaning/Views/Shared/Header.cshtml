@@ -12,17 +12,25 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Политика конфиденциальности</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">Корзина @await Component.InvokeAsync("Cart")</a>
                     </li>
-                    <li>
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Authorization" asp-action="Index"> <i class="bi bi-person"></i> Войти </a>
-                    </li>
-                    <li>
-                        <a class="nav-link text-dark" asp-area="administrator" asp-controller="administrator" asp-action="index"> <i class="bi bi-database"></i> Администратор </a>
-                    </li>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Authorization" asp-action="Logout">Выйти</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-person"> @User.Identity.Name</i></a>
+
+                        @if (User.IsInRole(Constants.AdminRoleName))
+                        {
+                            <a class="nav-link text-dark" asp-area="administrator" asp-controller="administrator" asp-action="index"> <i class="bi bi-database"></i> Администратор </a>
+                        }
+                    }
+                    else
+                    {
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Authorization" asp-action="Login">Войти</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Authorization" asp-action="Register">Регистрация</a>
+                    }
+                    
                     <li>
                         <a class="nav-link text-dark" asp-area="" asp-controller="Favourite" asp-action="index"> Избранное @await Component.InvokeAsync("CalculateFavouriteServiceCount")</a>
                     </li>

@@ -1,4 +1,4 @@
-﻿@model List<User>
+﻿@model List<UserViewModel>
 @{
     int i = 1;
 }
@@ -20,8 +20,6 @@
                         <th>№</th>
                         <th>Email</th>
                         <th>Телефон</th>
-                        <th>Роль</th>
-                        <th>Пароль</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -32,10 +30,8 @@
                             <td> @i </td>
                             <td>@user.Name</td>
                             <td>@user.Phone</td>
-                            <td>@user.Role.Name</td>
-                            <td>@user.Password</td>
                             <td class="col-4 text-end">
-                                 <a class="btn btn-outline-warning" asp-area="Administrator" asp-controller="User" asp-action="Details" asp-route-guid="@user.Guid"><i class="bi bi-pencil">Подробнее</i></a>
+                                 <a class="btn btn-outline-warning" asp-area="Administrator" asp-controller="User" asp-action="Details" asp-route-name="@user.Name"><i class="bi bi-pencil">Подробнее</i></a>
                             </td>
                         </tr>
                         i += 1;

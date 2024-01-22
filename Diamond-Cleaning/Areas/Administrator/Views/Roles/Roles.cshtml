@@ -1,4 +1,6 @@
-﻿@model List<Roles>;
+﻿@using Microsoft.AspNetCore.Identity
+@model List<IdentityRole>
+
 <form method="post">
     <div class="row">
         @await Html.PartialAsync("MenuAdministrator")

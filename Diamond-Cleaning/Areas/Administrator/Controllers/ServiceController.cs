@@ -1,5 +1,6 @@
 ﻿using Diamond_Cleaning.Helpers;
 using Diamond_Cleaning.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Db.Interfaces;
 using OnlineShop.Db.Models;
@@ -7,6 +8,7 @@ using OnlineShop.Db.Models;
 namespace Diamond_Cleaning.Areas.Administator.Controllers
 {
     [Area("Administrator")]
+    [Authorize(Roles = "Admin")]
     public class ServiceController : Controller
     {
         private IServicesRepository _servicesRepository;
