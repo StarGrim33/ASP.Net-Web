@@ -13,16 +13,17 @@ namespace OnlineShop.Db
             _dbContext = dbContext;
         }
 
-        public List<Service> GetServices()
+        public async Task<List<Service>> GetServicesAsync()
         {
             try
             {
-                var services = _dbContext.Services.ToList();
+                var services = await _dbContext.Services.ToListAsync();
                 return services;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                ex.Message.ToString();
+                return [];
             }
         }
 

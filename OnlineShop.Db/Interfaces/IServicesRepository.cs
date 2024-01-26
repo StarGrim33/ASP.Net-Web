@@ -4,7 +4,7 @@ namespace OnlineShop.Db.Interfaces
 {
     public interface IServicesRepository
     {
-        List<Service> GetServices();
+        Task<List<Service>> GetServicesAsync();
 
         Service? TryGetService(Guid id);
 

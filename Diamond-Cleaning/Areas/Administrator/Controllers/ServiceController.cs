@@ -1,4 +1,4 @@
-﻿using Diamond_Cleaning.Helpers;
+﻿using AutoMapper;
 using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,23 +11,25 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
     [Authorize(Roles = "Admin")]
     public class ServiceController : Controller
     {
-        private IServicesRepository _servicesRepository;
+        private readonly IServicesRepository _servicesRepository;
+        private readonly IMapper _mapper;
 
-        public ServiceController(IServicesRepository servicesRepository)
+        public ServiceController(IServicesRepository servicesRepository, IMapper mapper)
         {
             _servicesRepository = servicesRepository;
+            _mapper = mapper;
         }
 
-        public IActionResult GetProducts()
+        public async Task<IActionResult> GetProducts()
         {
-            var services = _servicesRepository.GetServices();
-            return View(Mapping.ToServiceViewModels(services));
+            var services = await _servicesRepository.GetServicesAsync();
+            var servicesViewModels = services.Select(_mapper.Map<ServiceDto>).ToList();
+            return View(servicesViewModels);
         }
 
         public IActionResult? Index(Guid id)
         {
             var service = _servicesRepository.TryGetService(id);
-
             return View(service);
         }
 

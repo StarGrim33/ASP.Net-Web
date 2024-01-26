@@ -1,6 +1,5 @@
 ﻿using Diamond_Cleaning.Models;
 using OnlineShop.Db.Models;
-using static NuGet.Packaging.PackagingConstants;
 
 namespace Diamond_Cleaning.Helpers
 {

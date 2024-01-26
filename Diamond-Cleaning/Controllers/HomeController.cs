@@ -27,7 +27,7 @@ namespace Diamond_Cleaning.Controllers
             ViewBag.ProductCount = cartViewModel?.Amount;
             ViewData["CurrentDate"] = $"Сегодня: {DateOnly.FromDateTime(DateTime.Now)}";
             ViewData["LastWeekStartDate"] = DateOnly.FromDateTime(DateTime.Now.AddDays(-7));
-            var services = _servicesRepository.GetServices();
+            var services = _servicesRepository.GetServicesAsync();
 
             return View(Mapping.ToServiceViewModels(services));
         }
@@ -42,7 +42,7 @@ namespace Diamond_Cleaning.Controllers
         {
             if (name != null)
             {
-                var products = _servicesRepository.GetServices();
+                var products = _servicesRepository.GetServicesAsync();
                 var findProducts = products.Where(product => product.Name.ToLower().Contains(name.ToLower())).ToList();
                 return View(findProducts);
             }
