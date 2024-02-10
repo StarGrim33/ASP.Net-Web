@@ -17,11 +17,11 @@ namespace Diamond_Cleaning.Controllers
             _cartRepository = cartRepository;
         }
 
-        public IActionResult Add(Guid serviceId)
+        public async Task<IActionResult> Add(Guid serviceId)
         {
             try
             {
-                var item = _productRepository.TryGetService(serviceId);
+                var item = await _productRepository.TryGetService(serviceId);
                 _cartRepository.Add(item, Constants.UserId);
                 return RedirectToAction("Index");
             }
@@ -31,11 +31,11 @@ namespace Diamond_Cleaning.Controllers
             }
         }
 
-        public IActionResult Delete(Guid serviceId)
+        public async Task<IActionResult> Delete(Guid serviceId)
         {
             try
             {
-                var item = _productRepository.TryGetService(serviceId);
+                var item = await _productRepository.TryGetService(serviceId);
                 _cartRepository.Delete(item, Constants.UserId);
                 return RedirectToAction("Index");
             }

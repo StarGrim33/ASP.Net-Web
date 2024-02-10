@@ -6,12 +6,12 @@ namespace OnlineShop.Db.Interfaces
     {
         List<Service> GetServices();
 
-        Service? TryGetService(Guid id);
+        Task<Service?> TryGetService(Guid id);
 
-        void Delete(Guid id);
+        Task Delete(Guid id);
 
-        void Add(Service service);
+        Task Add(Service service);
 
-        void Update(Service service);
+        Task Update(Service service);
     }
 }

@@ -37,9 +37,9 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
             return RedirectToAction("GetProducts");
         }
 
-        public IActionResult Edit(Guid id)
+        public async Task<IActionResult> Edit(Guid id)
         {
-            var product = _servicesRepository.TryGetService(id);
+            var product = await _servicesRepository.TryGetService(id);
 
             ServiceViewModel serviceViewModel = new()
             {
@@ -53,9 +53,9 @@ namespace Diamond_Cleaning.Areas.Administator.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(ServiceViewModel serviceViewModel, Guid id)
+        public async Task<IActionResult> Edit(ServiceViewModel serviceViewModel, Guid id)
         {
-            var currentProduct = _servicesRepository.TryGetService(id);
+            var currentProduct = await _servicesRepository.TryGetService(id);
             currentProduct.Name = serviceViewModel.Name;
             currentProduct.Cost = serviceViewModel.Cost;
             currentProduct.Description = serviceViewModel.Description;

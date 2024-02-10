@@ -26,11 +26,11 @@ namespace OnlineShop.Db
             }
         }
 
-        public Service? TryGetService(Guid id)
+        public async Task<Service?> TryGetService(Guid id)
         {
             try
             {
-                return _dbContext.Services.FirstOrDefault(product => product.Id == id);
+                return await _dbContext.Services.FirstOrDefaultAsync(product => product.Id == id);
             }
             catch (Exception)
             {
@@ -38,23 +38,23 @@ namespace OnlineShop.Db
             }
         }
 
-        public void Delete(Guid id)
+        public async Task Delete(Guid id)
         {
-            var product = TryGetService(id);
+            var product = await TryGetService(id);
             _dbContext.Services?.Remove(product);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void Add(Service service)
+        public async Task Add(Service service)
         {
-            _dbContext.Services.Add(service);
-            _dbContext.SaveChanges();
+            await _dbContext.Services.AddAsync(service);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void Update(Service service)
+        public async Task Update(Service service)
         {
             _dbContext.Services.Update(service);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

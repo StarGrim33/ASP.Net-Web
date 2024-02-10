@@ -2,7 +2,6 @@
 using Diamond_Cleaning.Models;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Db.Interfaces;
-using OnlineShop.Db.Models;
 
 namespace Diamond_Cleaning.Controllers
 {
@@ -15,9 +14,9 @@ namespace Diamond_Cleaning.Controllers
             _services = services;
         }
 
-        public IActionResult? Index(Guid serviceId)
+        public async Task<IActionResult?> Index(Guid serviceId)
         {
-            var service = _services.TryGetService(serviceId);
+            var service = await _services.TryGetService(serviceId);
             return View(Mapping.ToServiceViewModel(service));
         }
 
@@ -34,9 +33,9 @@ namespace Diamond_Cleaning.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(ServiceEdit serviceEdit, Guid id)
+        public async Task<IActionResult> Edit(ServiceEdit serviceEdit, Guid id)
         {
-            var currentProduct = _services.TryGetService(id);
+            var currentProduct = await _services.TryGetService(id);
             currentProduct.Name = serviceEdit.Name;
             currentProduct.Cost = serviceEdit.Cost;
             currentProduct.Description = serviceEdit.Description;
@@ -54,12 +53,5 @@ namespace Diamond_Cleaning.Controllers
 
             return View("Add");
         }
-
-        //[HttpPost]
-        //public IActionResult Add(ServiceEdit newProduct)
-        //{
-        //    _services.Add()
-        //    return RedirectToAction("GetProducts", "Administrator");
-        //}
     }
 }

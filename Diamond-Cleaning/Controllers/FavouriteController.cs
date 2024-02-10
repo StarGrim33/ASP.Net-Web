@@ -23,9 +23,9 @@ namespace Diamond_Cleaning.Controllers
             return View(Mapping.ToServiceViewModels(services));
         }
 
-        public IActionResult Add(Guid serviceId)
+        public async Task<IActionResult> Add(Guid serviceId)
         {
-            var service = _servicesRepository.TryGetService(serviceId);
+            var service = await _servicesRepository.TryGetService(serviceId);
 
             if (service != null)
             {
